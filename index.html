@@ -12,11 +12,21 @@
         body {
             font-family: 'Inter', sans-serif;
         }
-        .swoop-bg {
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23f9fafb' fill-opacity='1' d='M0,96L48,112C96,128,192,160,288,176C384,192,480,192,576,170.7C672,149,768,107,864,106.7C960,107,1056,149,1152,160C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
-            background-repeat: no-repeat;
-            background-position: bottom;
-            background-size: cover;
+        /* Style for responsive youtube embed */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+            background: #000;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
         }
     </style>
 </head>
@@ -28,6 +38,7 @@
             <a href="#" class="text-2xl font-bold text-gray-900">Alessandro Sparacio, Ph.D.</a>
             <nav class="hidden md:flex space-x-6">
                 <a href="#about" class="text-gray-600 hover:text-blue-600 transition">About</a>
+                <a href="#presentation" class="text-gray-600 hover:text-blue-600 transition">Presentation</a>
                 <a href="#publications" class="text-gray-600 hover:text-blue-600 transition">Publications</a>
                 <a href="#projects" class="text-gray-600 hover:text-blue-600 transition">Projects</a>
                 <a href="#contact" class="text-gray-600 hover:text-blue-600 transition">Contact</a>
@@ -38,17 +49,25 @@
     <!-- Main Content -->
     <main>
         <!-- Hero Section -->
-        <section class="bg-white pt-20 pb-32 swoop-bg">
-            <div class="container mx-auto px-6 flex flex-col md:flex-row items-center">
+        <section class="relative text-white pt-24 pb-32">
+            <!-- Background Image and Overlay -->
+            <div class="absolute inset-0">
+                <img src="https://images.unsplash.com/photo-1562474541-07ed748b1d46?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                     onerror="this.onerror=null;this.src='https://placehold.co/1440x600/1e293b/ffffff?text=Singapore+Skyline';" 
+                     class="w-full h-full object-cover" alt="Singapore Skyline Background">
+                <div class="absolute inset-0 bg-gray-900 opacity-60"></div>
+            </div>
+            
+            <div class="relative container mx-auto px-6 flex flex-col md:flex-row items-center">
                 <div class="md:w-2/3 text-center md:text-left">
-                    <h1 class="text-4xl md:text-6xl font-bold text-gray-900 leading-tight mb-4">Research Scientist</h1>
-                    <p class="text-lg md:text-xl text-gray-600 max-w-2xl mb-8">
+                    <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-4">Research Scientist</h1>
+                    <p class="text-lg md:text-xl text-gray-200 max-w-2xl mb-8">
                         Advancing mental health through rigorous, open, and equitable science, with a focus on non-pharmacological interventions for stress, mood, and sleep.
                     </p>
                     <a href="#contact" class="bg-blue-600 text-white font-semibold py-3 px-8 rounded-lg shadow-lg hover:bg-blue-700 transition transform hover:scale-105">Get in Touch</a>
                 </div>
                 <div class="md:w-1/3 mt-10 md:mt-0 flex justify-center">
-                    <img src="https://media.licdn.com/dms/image/v2/D5603AQF6tONjEAvqEQ/profile-displayphoto-shrink_800_800/B56ZRO2RRfGoAk-/0/1736489638534?e=1756339200&v=beta&t=SXAa6lXHU64t7hHMc2Z91GElBOzfyjnVLAIs-ag_lsI" alt="Alessandro Sparacio" class="rounded-full shadow-2xl w-64 h-64 md:w-80 md:h-80 object-cover">
+                    <img src="https://media.licdn.com/dms/image/v2/D5603AQF6tONjEAvqEQ/profile-displayphoto-shrink_800_800/B56ZRO2RRfGoAk-/0/1736489638534?e=1756944000&v=beta&t=z8I3VVt1tRerC1v7ol94Kx_mJJfNZ_Ffeuf9VXUyO1s" alt="Alessandro Sparacio" class="rounded-full shadow-2xl w-64 h-64 md:w-80 md:h-80 object-cover border-4 border-white/50">
                 </div>
             </div>
         </section>
@@ -61,60 +80,92 @@
                 </div>
                 <div class="max-w-4xl mx-auto bg-white p-8 rounded-xl shadow-md">
                     <p class="text-gray-700 text-lg leading-relaxed">
-                        I am a Research Scientist at the A*STAR Singapore Institute for Clinical Sciences (SICS), where my work is dedicated to advancing the field of mental health through research on cognition, mood, and sleep. My primary focus is on developing and validating cost-effective, non-pharmacological interventions that can be scaled to improve well-being for a broad population.
+                        As a Research Scientist at A*STAR's Institute for Human Development and Potential (IHDP), I am dedicated to advancing mental health research, with a focus on cognition, mood, and stress.
                     </p>
                     <p class="text-gray-700 text-lg leading-relaxed mt-4">
-                        This commitment is exemplified by my work leading a pre-registered, multi-site study on self-administered mindfulness, which was published in <span class="font-semibold text-gray-900">Nature Human Behaviour</span>. Involving 37 international sites and over 2,200 participants, this project established new benchmarks for rigor in the field. My research journey began during my joint Ph.D. at the University of Grenoble Alpes and Swansea University, where I investigated stress regulation processes through large-scale meta-analyses and collaborative projects.
+                        My work is centered on understanding and developing effective, accessible stress-reduction strategies. A cornerstone of my career has been leading a large-scale, multi-site project on self-administered mindfulness. This international collaboration involved 61 researchers across 37 sites and 2,239 participants. Our findings, published in <span class="font-semibold text-gray-900 italic">Nature Human Behaviour</span>, demonstrated that mindfulness significantly reduces stress compared to a control.
                     </p>
                     <p class="text-gray-700 text-lg leading-relaxed mt-4">
-                        I am a strong advocate for Open Science and am dedicated to conducting research with the highest level of scientific integrity to contribute meaningfully to global mental health and health equity.
+                        The impact of this study has led to significant opportunities, including being invited as a Keynote Speaker at the 4th Annual International Conference of Thai Clinical Psychologists and an invitation to present at the prestigious Global Young Scientists Summit (GYSS) 2025.
+                    </p>
+                    <p class="text-gray-700 text-lg leading-relaxed mt-4">
+                        This project was built upon my foundational doctoral research at Université Grenoble Alpes and Swansea University, where I conducted two comprehensive meta-analyses. The first, a Registered Report, evaluated the efficacy of nature exposure and social support. The second synthesized evidence for self-administered mindfulness and biofeedback, identifying critical gaps in the literature that my multi-site study aimed to address.
+                    </p>
+                     <p class="text-gray-700 text-lg leading-relaxed mt-4">
+                        Since joining A*STAR, I have expanded my expertise into clinical trials and digital biomarkers, leading a fully decentralized pilot trial of a mindfulness intervention for Singaporeans that used Heart Rate Variability (HRV) to measure stress.
+                    </p>
+                    <p class="text-gray-700 text-lg leading-relaxed mt-4">
+                        I earned my Ph.D. in Cognitive Sciences, Psychology, and Neurocognition with distinction for excellence in work and exemplary Open Science practices. My academic background also includes a Master's in Social and Occupational Psychology from the University of Milano-Bicocca. Through these experiences, I have honed my ability to lead impactful, international research and collaborate with interdisciplinary teams to enhance mental well-being.
                     </p>
                 </div>
             </div>
         </section>
 
+        <!-- Featured Presentation Section -->
+        <section id="presentation" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Featured Presentation</h2>
+                    <p class="text-gray-600 mt-2">My "Quickfire Pitch" at the Global Young Scientists Summit (GYSS) 2025.</p>
+                </div>
+                <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-2xl overflow-hidden">
+                    <div class="video-container">
+                        <iframe 
+                            src="https://www.youtube.com/embed/C2iK7nwVskc" 
+                            title="YouTube video player" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Featured Publications Section -->
-        <section id="publications" class="py-20 bg-white">
+        <section id="publications" class="py-20 bg-gray-50">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12">
                     <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Featured Publications</h2>
                 </div>
                 <div class="max-w-4xl mx-auto space-y-6">
                     <!-- Publication Item -->
-                    <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                    <div class="bg-white p-6 rounded-lg border border-gray-200 shadow-sm">
                         <h3 class="text-xl font-semibold text-gray-900">Self-administered mindfulness interventions reduce stress in a large, randomized controlled multi-site study.</h3>
                         <p class="text-gray-600 mt-1">Sparacio, A., IJzerman, H., Ropovik, I., et al. (2024). <span class="italic">Nature Human Behaviour, 8(9)</span>, 1716-1725.</p>
                         <a href="https://doi.org/10.1038/s41562-024-01907-7" target="_blank" class="text-blue-600 hover:underline mt-2 inline-block">View Publication &rarr;</a>
                     </div>
                     <!-- Publication Item -->
-                    <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                    <div class="bg-white p-6 rounded-lg border border-gray-200 shadow-sm">
                         <h3 class="text-xl font-semibold text-gray-900">Stress regulation via self-administered mindfulness and biofeedback interventions in adults: A pre-registered meta-analysis.</h3>
                         <p class="text-gray-600 mt-1">Sparacio, A., Ropovik, I., Jiga-Boy, G. M., et al. (2024). <span class="italic">Collabra: Psychology (Conditionally Accepted)</span>.</p>
                         <a href="https://psyarxiv.com/zpw28/" target="_blank" class="text-blue-600 hover:underline mt-2 inline-block">View Pre-print &rarr;</a>
                     </div>
                     <!-- Publication Item -->
-                    <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                    <div class="bg-white p-6 rounded-lg border border-gray-200 shadow-sm">
                         <h3 class="text-xl font-semibold text-gray-900">Stress regulation via being in nature and social support in adults: A Meta-analysis.</h3>
                         <p class="text-gray-600 mt-1">Sparacio, A., Ropovik, I., Jiga-Boy, G., et al. (2023). <span class="italic">Collabra: Psychology, 9(1)</span>.</p>
                         <!-- Add link when available -->
-                        <a href="#" class="text-blue-600 hover:underline mt-2 inline-block">View Publication &rarr;</a>
+                        <a href="https://online.ucpress.edu/collabra/article/9/1/77343/196335/Stress-Regulation-via-Being-in-Nature-and-Social" class="text-blue-600 hover:underline mt-2 inline-block">View Publication &rarr;</a>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Projects Section -->
-        <section id="projects" class="py-20 bg-gray-50">
+        <section id="projects" class="py-20 bg-white">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Current Projects</h2>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Current Project</h2>
                 </div>
-                <div class="max-w-4xl mx-auto bg-white p-8 rounded-xl shadow-md">
-                    <h3 class="text-2xl font-semibold text-gray-900 mb-2">The REFORM Trial</h3>
-                    <p class="text-gray-600 text-lg leading-relaxed">
-                        As Principal Investigator, I am leading a new multi-site study on self-administered mindfulnes. This project aims to build resilience across diverse socioeconomic contexts by investigating the optimal ratio of formal vs. informal self-administered mindfulness practice. Using an adaptive Bayesian design, we seek to provide definitive, actionable guidance for the future of digital mental health.
+                <div class="max-w-4xl mx-auto bg-blue-50 p-8 rounded-xl shadow-md border border-blue-200">
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-2">Building Resilience Across Socioeconomic Contexts: A Multi-Site study on Mindfulness</h3>
+                    <p class="text-gray-700 text-lg leading-relaxed">
+                        As Principal Investigator, I am leading this multi-site study funded by the National Medical Research Council (NMRC) of Singapore. This project aims to discover the optimal way to structure mindfulness training for stress reduction by testing different ratios of formal vs. informal practice. A key goal is to ensure health equity by recruiting a diverse, international sample.
                     </p>
-                    <a href="#" class="text-blue-600 hover:underline mt-4 inline-block font-semibold">Learn more about the REFORM Trial &rarr;</a>
+                    <p class="text-gray-700 text-lg leading-relaxed mt-4">
+                        We are still looking for international collaborators and community partners. You can read more about the project on its <a href="https://osf.io/7mnqd" target="_blank" class="text-blue-600 font-semibold hover:underline">Open Science Framework page</a> or contact me directly for more information.
+                    </p>
                 </div>
             </div>
         </section>
@@ -131,10 +182,9 @@
             </a>
             <div class="mt-8 flex justify-center space-x-6">
                 <!-- Replace # with your actual links -->
-                <a href="#" class="text-gray-400 hover:text-white transition">Google Scholar</a>
-                <a href="#" class="text-gray-400 hover:text-white transition">OSF</a>
-                <a href="#" class="text-gray-400 hover:text-white transition">ResearchGate</a>
-                <a href="#" class="text-gray-400 hover:text-white transition">LinkedIn</a>
+                <a href="https://x.com/asparacio992?s=21&t=Ww8wYQdxGhZCgTRMGoJoMg" target="_blank" class="text-gray-400 hover:text-white transition">X</a>
+                <a href="https://osf.io/tp7gm" target="_blank" class="text-gray-400 hover:text-white transition">OSF</a>
+                <a href="https://www.linkedin.com/in/alessandro-sparacio/" target="_blank" class="text-gray-400 hover:text-white transition">LinkedIn</a>
             </div>
         </div>
     </footer>
