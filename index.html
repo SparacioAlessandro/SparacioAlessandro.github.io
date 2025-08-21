@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,25 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-        .video-container {
-            position: relative;
-            padding-bottom: 56.25%; /* 16:9 aspect ratio */
-            height: 0;
-            overflow: hidden;
-        }
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-FPT71FLL2X"></script>
     <script>
@@ -39,96 +21,96 @@
       gtag('config', 'G-FPT71FLL2X');
     </script>
 </head>
-<body class="bg-white text-slate-800 antialiased">
+<body class="bg-white text-gray-800">
 
-    <header class="bg-white/80 backdrop-blur-md py-4 px-6 md:px-10 shadow-sm sticky top-0 z-50">
+    <header class="bg-white py-4 px-6 md:px-10 shadow-sm sticky top-0 z-50">
         <div class="container mx-auto flex justify-between items-center">
-            <a href="/" class="text-2xl font-bold text-slate-900">Alessandro Sparacio, Ph.D.</a>
-            <nav class="hidden md:flex space-x-8">
-                <a href="#about" class="text-slate-600 hover:text-blue-600 transition-colors duration-300">About</a>
-                <a href="#events" class="text-slate-600 hover:text-blue-600 transition-colors duration-300">Events</a>
-                <a href="#publications" class="text-slate-600 hover:text-blue-600 transition-colors duration-300">Publications</a>
-                <a href="#interviews" class="text-slate-600 hover:text-blue-600 transition-colors duration-300">Interviews</a>
-                <a href="#projects" class="text-slate-600 hover:text-blue-600 transition-colors duration-300">Projects</a>
-                <a href="#contact" class="text-slate-600 hover:text-blue-600 transition-colors duration-300">Contact</a>
+            <a href="/" class="text-2xl font-bold text-gray-900">Alessandro Sparacio, Ph.D.</a>
+            <nav class="hidden md:flex space-x-6">
+                <a href="#about" class="text-gray-600 hover:text-blue-600 transition">About</a>
+                <a href="#events" class="text-gray-600 hover:text-blue-600 transition">Events</a>
+                <a href="#publications" class="text-gray-600 hover:text-blue-600 transition">Publications</a>
+                <a href="#interviews" class="text-gray-600 hover:text-blue-600 transition">Interviews</a>
+                <a href="#projects" class="text-gray-600 hover:text-blue-600 transition">Projects</a>
+                <a href="#contact" class="text-gray-600 hover:text-blue-600 transition">Contact</a>
             </nav>
-            <button id="mobile-menu-button" class="md:hidden p-2 text-slate-600 hover:text-blue-600 focus:outline-none">
+            <button id="mobile-menu-button" class="md:hidden p-2 text-gray-600 hover:text-blue-600 focus:outline-none">
                 <i class="fas fa-bars text-xl"></i>
             </button>
         </div>
-        <nav id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-white shadow-lg py-2">
-            <a href="#about" class="block py-3 px-6 text-slate-600 hover:bg-slate-50 hover:text-blue-600 transition-colors duration-300">About</a>
-            <a href="#events" class="block py-3 px-6 text-slate-600 hover:bg-slate-50 hover:text-blue-600 transition-colors duration-300">Events</a>
-            <a href="#publications" class="block py-3 px-6 text-slate-600 hover:bg-slate-50 hover:text-blue-600 transition-colors duration-300">Publications</a>
-            <a href="#interviews" class="block py-3 px-6 text-slate-600 hover:bg-slate-50 hover:text-blue-600 transition-colors duration-300">Interviews</a>
-            <a href="#projects" class="block py-3 px-6 text-slate-600 hover:bg-slate-50 hover:text-blue-600 transition-colors duration-300">Projects</a>
-            <a href="#contact" class="block py-3 px-6 text-slate-600 hover:bg-slate-50 hover:text-blue-600 transition-colors duration-300">Contact</a>
+        <nav id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-white shadow-lg py-4">
+            <a href="#about" class="block py-2 px-6 text-gray-600 hover:text-blue-600 transition border-b">About</a>
+            <a href="#events" class="block py-2 px-6 text-gray-600 hover:text-blue-600 transition border-b">Events</a>
+            <a href="#publications" class="block py-2 px-6 text-gray-600 hover:text-blue-600 transition border-b">Publications</a>
+            <a href="#interviews" class="block py-2 px-6 text-gray-600 hover:text-blue-600 transition border-b">Interviews</a>
+            <a href="#projects" class="block py-2 px-6 text-gray-600 hover:text-blue-600 transition border-b">Projects</a>
+            <a href="#contact" class="block py-2 px-6 text-gray-600 hover:text-blue-600 transition">Contact</a>
         </nav>
     </header>
 
     <main>
-        <section class="relative text-white pt-28 pb-36">
+        <section class="relative text-white pt-24 pb-32">
             <div class="absolute inset-0">
                 <img 
                     src="https://images.unsplash.com/photo-1562474541-07ed748b1d46?q=80&w=1632&auto=format&fit=crop" 
                     srcset="https://images.unsplash.com/photo-1562474541-07ed748b1d46?q=80&w=768&auto=format&fit=crop 768w, https://images.unsplash.com/photo-1562474541-07ed748b1d46?q=80&w=1632&auto=format&fit=crop 1632w"
                     sizes="(max-width: 768px) 100vw, 50vw"
-                    alt="Panoramic view of the Singapore skyline at sunset." 
+                    alt="Panoramic view of the Singapore skyline at sunset, with a prominent building in the foreground and a hazy sky." 
                     class="w-full h-full object-cover" 
                     loading="lazy">
-                <div class="absolute inset-0 bg-gray-900/60"></div>
+                <div class="absolute inset-0 bg-gray-900 opacity-60"></div>
             </div>
             
-            <div class="relative container mx-auto px-6 flex flex-col-reverse md:flex-row items-center gap-12">
+            <div class="relative container mx-auto px-6 flex flex-col md:flex-row items-center">
                 <div class="md:w-2/3 text-center md:text-left">
                     <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-4">Research Scientist</h1>
-                    <p class="text-lg md:text-xl text-slate-200 max-w-2xl mb-8">
+                    <p class="text-lg md:text-xl text-gray-200 max-w-2xl mb-8">
                         Advancing mental health through rigorous, open, and equitable science, with a focus on non-pharmacological interventions for stress, mood, and sleep.
                     </p>
-                    <a href="#contact" class="bg-blue-600 text-white font-semibold py-3 px-8 rounded-lg shadow-lg hover:bg-blue-700 transition-all duration-300 transform hover:scale-105">Get in Touch</a>
+                    <a href="#contact" class="bg-blue-600 text-white font-semibold py-3 px-8 rounded-lg shadow-lg hover:bg-blue-700 transition transform hover:scale-105">Get in Touch</a>
                 </div>
-                <div class="md:w-1/3 flex justify-center">
+                <div class="md:w-1/3 mt-10 md:mt-0 flex justify-center">
                     <img src="https://media.licdn.com/dms/image/v2/D5603AQF6tONjEAvqEQ/profile-displayphoto-shrink_800_800/B56ZRO2RRfGoAk-/0/1736489638534?e=1757548800&v=beta&t=z6xpnjGuQp-D8vfCzukH0sIgo4LQgeI6OSI8ndzRC2E" 
-                         alt="Professional headshot of Alessandro Sparacio." 
-                         class="rounded-full shadow-2xl w-60 h-60 md:w-80 md:h-80 object-cover border-4 border-white/30" 
-                         loading="lazy">
+                            alt="Professional headshot of Alessandro Sparacio, a male in his 30s with short hair and a beard, smiling faintly." 
+                            class="rounded-full shadow-2xl w-64 h-64 md:w-80 md:h-80 object-cover border-4 border-white/50" 
+                            loading="lazy">
                 </div>
             </div>
         </section>
 
-        <section id="about" class="py-24 bg-slate-50">
+        <section id="about" class="py-20 bg-gray-50">
             <div class="container mx-auto px-6">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl md:text-5xl font-bold text-slate-900">About Me</h2>
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">About Me</h2>
                 </div>
-                <article class="max-w-4xl mx-auto bg-white p-8 md:p-10 rounded-xl shadow-lg space-y-5">
-                    <p class="text-slate-700 text-lg leading-relaxed">
+                <article class="max-w-4xl mx-auto bg-white p-8 rounded-xl shadow-md space-y-4">
+                    <p class="text-gray-700 text-lg leading-relaxed">
                         As a Research Scientist at A*STAR's Institute for Human Development and Potential (IHDP), I am dedicated to advancing mental health research, with a focus on cognition, mood, and stress.
                     </p>
-                    <p class="text-slate-700 text-lg leading-relaxed">
-                        My work is centered on understanding and developing effective, accessible stress-reduction strategies. A cornerstone of my career has been leading a large-scale, multi-site project on self-administered mindfulness. This international collaboration involved 61 researchers across 37 sites and 2,239 participants. Our findings, published in the <strong class="font-semibold text-slate-900 italic">Nature Human Behaviour</strong>, demonstrated that mindfulness significantly reduces stress compared to a control.
+                    <p class="text-gray-700 text-lg leading-relaxed">
+                        My work is centered on understanding and developing effective, accessible stress-reduction strategies. A cornerstone of my career has been leading a large-scale, multi-site project on self-administered mindfulness. This international collaboration involved 61 researchers across 37 sites and 2,239 participants. Our findings, published in <span class="font-semibold text-gray-900 italic">Nature Human Behaviour</span>, demonstrated that mindfulness significantly reduces stress compared to a control.
                     </p>
-                    <p class="text-slate-700 text-lg leading-relaxed">
+                    <p class="text-gray-700 text-lg leading-relaxed">
                         The impact of this study has led to significant opportunities, including being invited as a Keynote Speaker at the 4th Annual International Conference of Thai Clinical Psychologists and an invitation to present at the prestigious Global Young Scientists Summit (GYSS) 2025.
                     </p>
-                    <p class="text-slate-700 text-lg leading-relaxed">
+                    <p class="text-gray-700 text-lg leading-relaxed">
                         This project was built upon my foundational doctoral research at Université Grenoble Alpes and Swansea University, where I conducted two comprehensive meta-analyses. The first, a Registered Report, evaluated the efficacy of nature exposure and social support. The second synthesized evidence for self-administered mindfulness and biofeedback, identifying critical gaps in the literature that my multi-site study aimed to address.
                     </p>
-                    <p class="text-slate-700 text-lg leading-relaxed">
+                    <p class="text-gray-700 text-lg leading-relaxed">
                         Since joining A*STAR, I have expanded my expertise into clinical trials and digital biomarkers, leading a fully decentralized pilot trial of a mindfulness intervention for Singaporeans that used Heart Rate Variability (HRV) to measure stress.
                     </p>
-                    <p class="text-slate-700 text-lg leading-relaxed">
+                    <p class="text-gray-700 text-lg leading-relaxed">
                         I earned my Ph.D. in Cognitive Sciences, Psychology, and Neurocognition with distinction for excellence in work and exemplary Open Science practices. My academic background also includes a Master's in Social and Occupational Psychology from the University of Milano-Bicocca. Through these experiences, I have honed my ability to lead impactful, international research and collaborate with interdisciplinary teams to enhance mental well-being.
                     </p>
                 </article>
             </div>
         </section>
 
-        <section id="presentation" class="py-24 bg-white">
+        <section id="presentation" class="py-20 bg-white">
             <div class="container mx-auto px-6">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl md:text-5xl font-bold text-slate-900">Featured Presentation</h2>
-                    <p class="text-slate-600 mt-4 text-lg max-w-2xl mx-auto">My "Quickfire Pitch" at the Global Young Scientists Summit (GYSS) 2025.</p>
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Featured Presentation</h2>
+                    <p class="text-gray-600 mt-2">My "Quickfire Pitch" at the Global Young Scientists Summit (GYSS) 2025.</p>
                 </div>
                 <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-2xl overflow-hidden">
                     <div class="video-container">
@@ -144,117 +126,98 @@
             </div>
         </section>
 
-        <section id="events" class="py-24 bg-slate-50">
+        <section id="events" class="py-20 bg-gray-50">
             <div class="container mx-auto px-6">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl md:text-5xl font-bold text-slate-900">Upcoming Events</h2>
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Upcoming Events</h2>
                 </div>
-                <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-10">
-                    <article class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col transform hover:-translate-y-2 transition-transform duration-300">
-                        <img src="https://images.unsplash.com/photo-1558021211-6514091153de?q=80&w=1287" alt="Abstract image representing mindfulness" class="w-full h-52 object-cover" loading="lazy">
+                <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
+                    <article class="bg-white rounded-xl shadow-md overflow-hidden flex flex-col">
+                        <img src="event_mindfulness.png"
+                                alt="Poster for the Manchester Mindfulness Festival" class="w-full h-48 object-cover" loading="lazy">
                         <div class="p-6 flex flex-col flex-grow">
-                            <h3 class="text-xl font-semibold text-slate-900">Brief Mindfulness for Real-Life Stress Relief: Evidence from a Multi-Site Study</h3>
-                            <div class="text-sm font-medium text-slate-500 mt-3 space-y-1">
-                                <p><i class="fas fa-calendar-alt w-5"></i> <strong>Date:</strong> 30 August 2025, 10-11am, UK</p>
-                                <p><i class="fas fa-map-marker-alt w-5"></i> <strong>Location:</strong> Online</p>
+                            <h3 class="text-xl font-semibold text-gray-900">Brief Mindfulness for Real-Life Stress Relief: Evidence from a Multi-Site Study</h3>
+                            <div class="text-sm font-medium text-gray-500 mt-2 space-y-1">
+                                <p><strong>Date:</strong> 30 August 2025, 10-11am, UK</p>
+                                <p><strong>Location:</strong> Online</p>
                             </div>
-                            <p class="text-slate-600 mt-4 flex-grow">A talk at The Manchester Mindfulness Festival exploring findings from a large-scale study on the practical applications of brief mindfulness exercises.</p>
-                            <a href="https://www.eventbrite.co.uk/e/the-manchester-mindfulness-festival-online-events-tickets-1334931980489?aff=oddtdtcreator" target="_blank" class="mt-4 bg-blue-600 text-white text-center font-semibold py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors duration-300">View Event</a>
+                            <p class="text-gray-600 mt-2 flex-grow">A talk at The Manchester Mindfulness Festival exploring findings from a large-scale study on the practical applications of brief mindfulness exercises.</p>
+                            <a href="https://www.eventbrite.co.uk/e/the-manchester-mindfulness-festival-online-events-tickets-1334931980489?aff=oddtdtcreator" target="_blank" class="mt-4 bg-blue-600 text-white text-center font-semibold py-2 px-4 rounded-lg hover:bg-blue-700 transition">View Event</a>
                         </div>
                     </article>
-                    <article class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col transform hover:-translate-y-2 transition-transform duration-300">
-                        <img src="https://images.unsplash.com/photo-1621155346337-1d19476ba7d6?q=80&w=1470" alt="Scientific equipment in a lab representing research" class="w-full h-52 object-cover" loading="lazy">
+                    <article class="bg-white rounded-xl shadow-md overflow-hidden flex flex-col">
+                        <img src="event_nus.png"
+                                alt="Workshop poster for the Replication Crisis in Science and Medicine at NUS" class="w-full h-48 object-cover" loading="lazy">
                         <div class="p-6 flex flex-col flex-grow">
-                            <h3 class="text-xl font-semibold text-slate-900">Workshop - The Replication Crisis in Science and Medicine</h3>
-                            <div class="text-sm font-medium text-slate-500 mt-3 space-y-1">
-                                <p><i class="fas fa-calendar-alt w-5"></i> <strong>Date:</strong> 2 October 2025, 2-5pm, Singapore</p>
-                                <p><i class="fas fa-map-marker-alt w-5"></i> <strong>Location:</strong> Singapore</p>
+                            <h3 class="text-xl font-semibold text-gray-900">Workshop - The Replication Crisis in Science and Medicine</h3>
+                            <div class="text-sm font-medium text-gray-500 mt-2 space-y-1">
+                                <p><strong>Date:</strong> 2 October 2025, 2-5pm, Singapore</p>
+                                <p><strong>Location:</strong> Singapore</p>
                             </div>
-                            <p class="text-slate-600 mt-4 flex-grow">A workshop at NUS Medicine discussing the challenges of the replication crisis and how embracing reproducibility can strengthen scientific progress.</p>
-                            <a href="https://medicine.nus.edu.sg/cbme/replication-crisis-workshop/" target="_blank" class="mt-4 bg-blue-600 text-white text-center font-semibold py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors duration-300">View Event</a>
+                            <p class="text-gray-600 mt-2 flex-grow">A workshop at NUS Medicine discussing the challenges of the replication crisis and how embracing reproducibility can strengthen scientific progress in Singapore.</p>
+                            <a href="https://medicine.nus.edu.sg/cbme/replication-crisis-workshop/" target="_blank" class="mt-4 bg-blue-600 text-white text-center font-semibold py-2 px-4 rounded-lg hover:bg-blue-700 transition">View Event</a>
                         </div>
                     </article>
                 </div>
             </div>
         </section>
 
-        <section id="publications" class="py-24 bg-white">
+        <section id="publications" class="py-20 bg-white">
             <div class="container mx-auto px-6">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl md:text-5xl font-bold text-slate-900">Featured Publications</h2>
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Featured Publications</h2>
                 </div>
-                <div class="max-w-4xl mx-auto space-y-10">
-                    <article class="bg-slate-50 rounded-lg border border-slate-200 shadow-sm overflow-hidden md:flex items-center gap-6 p-6">
-                        <img src="https://via.placeholder.com/400x300/3B82F6/FFFFFF?text=Publication" alt="Publication Image Placeholder" class="w-full md:w-1/3 rounded-md mb-4 md:mb-0 object-cover">
-                        <div class="md:w-2/3">
-                            <h3 class="text-xl font-semibold text-slate-900">Feasibility and Acceptability of a Smartphone-Delivered Mindfulness Intervention for Stress Reduction in Adult Singaporeans: Pilot Randomized Controlled Trial</h3>
-                            <p class="text-slate-600 mt-2">This pilot RCT explored a smartphone-based mindfulness app for Singaporean adults, demonstrating high feasibility and acceptability and showing promising results for stress reduction using digital health tools.</p>
-                            <p class="text-sm text-slate-500 mt-3">Sparacio, A., et al. (2025). <span class="italic">JMIR Mental Health</span>.</p>
-                            <a href="https://mental.jmir.org/2025/1/e77793" target="_blank" class="text-blue-600 font-semibold hover:underline mt-3 inline-block">View Publication →</a>
-                        </div>
+                <div class="max-w-4xl mx-auto space-y-6">
+                    <article class="bg-gray-50 p-6 rounded-lg border border-gray-200 shadow-sm">
+                        <h3 class="text-xl font-semibold text-gray-900">Self-administered mindfulness interventions reduce stress in a large, randomized controlled multi-site study.</h3>
+                        <p class="text-gray-600 mt-1">Sparacio, A., IJzerman, H., Ropovik, I., et al. (2024). <span class="italic">Nature Human Behaviour, 8(9)</span>, 1716-1725.</p>
+                        <a href="https://doi.org/10.1038/s41562-024-01907-7" target="_blank" class="text-blue-600 hover:underline mt-2 inline-block">View Publication →</a>
                     </article>
-                    <article class="bg-slate-50 rounded-lg border border-slate-200 shadow-sm overflow-hidden md:flex items-center gap-6 p-6">
-                        <img src="https://via.placeholder.com/400x300/3B82F6/FFFFFF?text=Publication" alt="Publication Image Placeholder" class="w-full md:w-1/3 rounded-md mb-4 md:mb-0 object-cover">
-                        <div class="md:w-2/3">
-                            <h3 class="text-xl font-semibold text-slate-900">Self-administered mindfulness interventions reduce stress in a large, randomized controlled multi-site study.</h3>
-                             <p class="text-slate-600 mt-2">This international multi-site study involving 2,239 participants provides robust evidence that brief, self-administered mindfulness exercises are effective in reducing stress.</p>
-                            <p class="text-sm text-slate-500 mt-3">Sparacio, A., IJzerman, H., Ropovik, I., et al. (2024). <span class="italic">Nature Human Behaviour, 8(9)</span>, 1716-1725.</p>
-                            <a href="https://doi.org/10.1038/s41562-024-01907-7" target="_blank" class="text-blue-600 font-semibold hover:underline mt-3 inline-block">View Publication →</a>
-                        </div>
+                    <article class="bg-gray-50 p-6 rounded-lg border border-gray-200 shadow-sm">
+                        <h3 class="text-xl font-semibold text-gray-900">Stress regulation via self-administered mindfulness and biofeedback interventions in adults: A pre-registered meta-analysis.</h3>
+                        <p class="text-gray-600 mt-1">Sparacio, A., Ropovik, I., Jiga-Boy, G. M., et al. (2024). <span class="italic">Collabra: Psychology (Conditionally Accepted)</span>.</p>
+                        <a href="https://psyarxiv.com/zpw28/" target="_blank" class="text-blue-600 hover:underline mt-2 inline-block">View Pre-print →</a>
                     </article>
-                    <article class="bg-slate-50 rounded-lg border border-slate-200 shadow-sm overflow-hidden md:flex items-center gap-6 p-6">
-                        <img src="https://via.placeholder.com/400x300/3B82F6/FFFFFF?text=Publication" alt="Publication Image Placeholder" class="w-full md:w-1/3 rounded-md mb-4 md:mb-0 object-cover">
-                        <div class="md:w-2/3">
-                            <h3 class="text-xl font-semibold text-slate-900">Stress regulation via self-administered mindfulness and biofeedback interventions in adults: A pre-registered meta-analysis.</h3>
-                            <p class="text-slate-600 mt-2">A comprehensive meta-analysis synthesizing existing research on self-administered mindfulness and biofeedback interventions, highlighting their efficacy for stress regulation.</p>
-                            <p class="text-sm text-slate-500 mt-3">Sparacio, A., Ropovik, I., Jiga-Boy, G. M., et al. (2024). <span class="italic">Collabra: Psychology (Conditionally Accepted)</span>.</p>
-                            <a href="https://psyarxiv.com/zpw28/" target="_blank" class="text-blue-600 font-semibold hover:underline mt-3 inline-block">View Pre-print →</a>
-                        </div>
-                    </article>
-                    <article class="bg-slate-50 rounded-lg border border-slate-200 shadow-sm overflow-hidden md:flex items-center gap-6 p-6">
-                        <img src="https://via.placeholder.com/400x300/3B82F6/FFFFFF?text=Publication" alt="Publication Image Placeholder" class="w-full md:w-1/3 rounded-md mb-4 md:mb-0 object-cover">
-                        <div class="md:w-2/3">
-                            <h3 class="text-xl font-semibold text-slate-900">Stress regulation via being in nature and social support in adults: A Meta-analysis.</h3>
-                            <p class="text-slate-600 mt-2">This pre-registered meta-analysis systematically evaluates the impact of nature exposure and social support as stress-reduction strategies, contributing to the evidence base for accessible, non-clinical interventions.</p>
-                            <p class="text-sm text-slate-500 mt-3">Sparacio, A., Ropovik, I., Jiga-Boy, G., et al. (2023). <span class="italic">Collabra: Psychology, 9(1)</span>.</p>
-                            <a href="https://online.ucpress.edu/collabra/article/9/1/77343/196335/Stress-Regulation-via-Being-in-Nature-and-Social" target="_blank" class="text-blue-600 font-semibold hover:underline mt-3 inline-block">View Publication →</a>
-                        </div>
+                    <article class="bg-gray-50 p-6 rounded-lg border border-gray-200 shadow-sm">
+                        <h3 class="text-xl font-semibold text-gray-900">Stress regulation via being in nature and social support in adults: A Meta-analysis.</h3>
+                        <p class="text-gray-600 mt-1">Sparacio, A., Ropovik, I., Jiga-Boy, G., et al. (2023). <span class="italic">Collabra: Psychology, 9(1)</span>.</p>
+                        <a href="https://online.ucpress.edu/collabra/article/9/1/77343/196335/Stress-Regulation-via-Being-in-Nature-and-Social" target="_blank" class="text-blue-600 hover:underline mt-2 inline-block">View Publication →</a>
                     </article>
                 </div>
             </div>
         </section>
 
-        <section id="interviews" class="py-24 bg-slate-50">
+        <section id="interviews" class="py-20 bg-gray-50">
             <div class="container mx-auto px-6">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl md:text-5xl font-bold text-slate-900">Interviews & Press</h2>
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Interviews & Press</h2>
                 </div>
-                <div class="max-w-4xl mx-auto space-y-8">
-                    <article class="bg-white p-6 rounded-lg border border-slate-200 shadow-sm">
-                        <h3 class="text-xl font-semibold text-slate-900">La Repubblica</h3>
-                        <p class="text-slate-600 mt-2">An interview discussing the findings of our multi-site study on the effectiveness of mindfulness for stress reduction.</p>
-                        <a href="https://www.repubblica.it/venerdi/2024/07/29/news/mindfulness_ansia_stress_esercizi-423419156/" target="_blank" class="text-blue-600 font-semibold hover:underline mt-3 inline-block">Read Article →</a>
+                <div class="max-w-4xl mx-auto space-y-6">
+                    <article class="bg-white p-6 rounded-lg border border-gray-200 shadow-sm">
+                        <h3 class="text-xl font-semibold text-gray-900">La Repubblica</h3>
+                        <p class="text-gray-600 mt-1">An interview discussing the findings of our multi-site study on the effectiveness of mindfulness for stress reduction.</p>
+                        <a href="https://www.repubblica.it/venerdi/2024/07/29/news/mindfulness_ansia_stress_esercizi-423419156/" target="_blank" class="text-blue-600 hover:underline mt-2 inline-block">Read Article →</a>
                     </article>
-                    <article class="bg-white p-6 rounded-lg border border-slate-200 shadow-sm">
-                        <h3 class="text-xl font-semibold text-slate-900">Medical Xpress</h3>
-                        <p class="text-slate-600 mt-2">A discussion with Medical Xpress about our research on self-administered mindfulness interventions and their impact on stress.</p>
-                        <a href="https://medicalxpress.com/news/2024-06-large-scale-short-term-impact.html" target="_blank" class="text-blue-600 font-semibold hover:underline mt-3 inline-block">Read Article →</a>
+                    <article class="bg-white p-6 rounded-lg border border-gray-200 shadow-sm">
+                        <h3 class="text-xl font-semibold text-gray-900">Medical Xpress</h3>
+                        <p class="text-gray-600 mt-1">A discussion with Medical Xpress about our research on self-administered mindfulness interventions and their impact on stress.</p>
+                        <a href="https://medicalxpress.com/news/2024-06-large-scale-short-term-impact.html" target="_blank" class="text-blue-600 hover:underline mt-2 inline-block">Read Article →</a>
                     </article>
                 </div>
             </div>
         </section>
 
-        <section id="projects" class="py-24 bg-white">
+        <section id="projects" class="py-20 bg-white">
             <div class="container mx-auto px-6">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl md:text-5xl font-bold text-slate-900">Current Project</h2>
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Current Project</h2>
                 </div>
-                <div class="max-w-4xl mx-auto bg-blue-50 p-8 md:p-10 rounded-xl shadow-lg border border-blue-200">
-                    <h3 class="text-2xl font-semibold text-slate-900 mb-3">Building Resilience Across Socioeconomic Contexts: A Multi-Site study on Mindfulness</h3>
-                    <p class="text-slate-700 text-lg leading-relaxed">
+                <div class="max-w-4xl mx-auto bg-blue-50 p-8 rounded-xl shadow-md border border-blue-200">
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-2">Building Resilience Across Socioeconomic Contexts: A Multi-Site study on Mindfulness</h3>
+                    <p class="text-gray-700 text-lg leading-relaxed">
                         As Principal Investigator, I am leading this multi-site study funded by the National Medical Research Council (NMRC) of Singapore. This project aims to discover the optimal way to structure mindfulness training for stress reduction by testing different ratios of formal vs. informal practice. A key goal is to ensure health equity by recruiting a diverse, international sample.
                     </p>
-                    <p class="text-slate-700 text-lg leading-relaxed mt-4">
+                    <p class="text-gray-700 text-lg leading-relaxed mt-4">
                         We are still looking for international collaborators and community partners. You can read more about the project on its <a href="https://osf.io/7mnqd" target="_blank" class="text-blue-600 font-semibold hover:underline">Open Science Framework page</a> or contact me directly for more information.
                     </p>
                 </div>
@@ -262,30 +225,26 @@
         </section>
     </main>
 
-    <footer id="contact" class="bg-slate-900 text-white py-16">
+    <footer id="contact" class="bg-gray-900 text-white py-12">
         <div class="container mx-auto px-6 text-center">
-            <h2 class="text-4xl font-bold mb-4">Contact</h2>
-            <p class="text-slate-400 mb-8 max-w-lg mx-auto">Feel free to reach out for collaborations, speaking engagements, or other inquiries.</p>
-            <div class="mb-10">
-                <a href="mailto:alessandro.sparacio@sics.a-star.edu.sg" class="bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg shadow-lg hover:bg-blue-700 transition-colors duration-300 inline-block break-all">
+            <h2 class="text-3xl font-bold mb-4">Contact</h2>
+            <p class="text-gray-400 mb-6">Feel free to reach out for collaborations or inquiries.</p>
+            <div class="mb-8">
+                <a href="mailto:alessandro.sparacio@sics.a-star.edu.sg" class="bg-blue-600 text-white font-semibold py-3 px-4 sm:px-8 rounded-lg shadow-lg hover:bg-blue-700 transition break-all">
                     alessandro.sparacio@sics.a-star.edu.sg
                 </a>
             </div>
-            <div class="flex justify-center space-x-6 text-3xl mb-8">
-                <a href="https://x.com/asparacio992?s=21&t=Ww8wYQdxGhZCgTRMGoJoMg" target="_blank" class="text-slate-400 hover:text-white transition-colors duration-300" aria-label="Visit Alessandro Sparacio's profile on X (formerly Twitter)">
+            <div class="flex justify-center space-x-6 text-2xl">
+                <a href="https://x.com/asparacio992?s=21&t=Ww8wYQdxGhZCgTRMGoJoMg" target="_blank" class="text-gray-400 hover:text-white transition" aria-label="Visit Alessandro Sparacio's profile on X (formerly Twitter)">
                     <i class="fab fa-x-twitter"></i>
                 </a>
-                <a href="https://www.linkedin.com/in/alessandro-sparacio/" target="_blank" class="text-slate-400 hover:text-white transition-colors duration-300" aria-label="Visit Alessandro Sparacio's LinkedIn profile">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-                <a href="https://osf.io/tp7gm" target="_blank" class="text-slate-400 hover:text-white transition-colors duration-300" aria-label="Visit Alessandro Sparacio's projects on Open Science Framework">
+                <a href="https://osf.io/tp7gm" target="_blank" class="text-gray-400 hover:text-white transition" aria-label="Visit Alessandro Sparacio's projects on Open Science Framework">
                     <i class="fas fa-flask"></i>
                 </a>
-                <a href="https://orcid.org/0009-0008-9818-3920" target="_blank" class="text-slate-400 hover:text-white transition-colors duration-300" aria-label="Visit Alessandro Sparacio's ORCID profile">
-                    <i class="fab fa-orcid"></i>
+                <a href="https://www.linkedin.com/in/alessandro-sparacio/" target="_blank" class="text-gray-400 hover:text-white transition" aria-label="Visit Alessandro Sparacio's LinkedIn profile">
+                    <i class="fab fa-linkedin"></i>
                 </a>
             </div>
-            <p class="text-slate-500 text-sm">Alessandro Sparacio (0009-0008-9818-3920)</p>
         </div>
     </footer>
 
