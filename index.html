@@ -69,7 +69,7 @@
                     </p>
                     <div class="mb-8 fade-in-up delay-2">
                         <span class="text-sm text-gray-300 uppercase tracking-wider">Featured In:</span>
-                        <a href="https://doi.org/10.1038/s41562-024-01907-7" target="_blank" class="font-semibold text-white italic hover:underline ml-2">Nature Human Behaviour</a>
+                        <a href="https://www.nature.com/nathumbehav/volumes/8/issues/9" target="_blank" class="font-semibold text-white italic hover:underline ml-2">Nature Human Behaviour</a>
                     </div>
                     <a href="#contact" class="bg-blue-600 text-white font-semibold py-3 px-8 rounded-lg shadow-lg hover:bg-blue-700 transition transform hover:scale-105 fade-in-up delay-3">Get in Touch</a>
                 </div>
@@ -356,7 +356,7 @@
             });
 
             // --- Fade-in Animations on Scroll ---
-            const animatedElements = document.querySelectorAll('section > div > *:not(.fade-in-up)');
+            const animatedElements = document.querySelectorAll('section:not(#home) > div > *');
             const animationObserver = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
