@@ -1,268 +1,375 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Official website of Alessandro Sparacio, Ph.D., a research scientist specializing in mental health and open science practices.">
-  <title>Alessandro Sparacio, Ph.D. | Research Scientist</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Official website of Alessandro Sparacio, Ph.D., a research scientist specializing in mental health and open science practices.">
+    <title>Alessandro Sparacio, Ph.D. | Research Scientist</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 
-  <!-- Tailwind & Fonts -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <!-- Keep your original stylesheet so existing classes (video container, badges, fade-in-up, etc.) still work -->
-  <link rel="stylesheet" href="style.css">
-
-  <!-- New lightweight CSS kept inline so you only need to replace index.html -->
-  <style>
-    body { font-family: 'Inter', sans-serif; }
-
-    /* Hero background animation */
-    .animated-bg {
-      background: linear-gradient(270deg, #1e3a8a, #0ea5e9, #9333ea);
-      background-size: 600% 600%;
-      animation: gradientShift 18s ease infinite;
-    }
-    @keyframes gradientShift { 0% {background-position: 0% 50%} 50% {background-position: 100% 50%} 100% {background-position: 0% 50%} }
-
-    /* Logo carousel uses only assets you already have in your repo */
-    .logo-carousel { display:flex; overflow:hidden; justify-content:center; }
-    .logo-track { display:flex; align-items:center; animation: scroll 28s linear infinite; }
-    .logo-track img { height: 36px; margin: 0 2rem; filter: grayscale(100%); opacity: .85; }
-    @keyframes scroll { 0%{ transform: translateX(0)} 100%{ transform: translateX(-50%) } }
-
-    /* Small hover elevation */
-    .card-hover { transition: transform .2s ease, box-shadow .2s ease; }
-    .card-hover:hover { transform: translateY(-6px); box-shadow: 0 12px 24px rgba(0,0,0,.12); }
-
-    /* Dark mode base */
-    .dark body{ background-color:#111827; color:#f9fafb }
-  </style>
-
-  <!-- Google Analytics (kept from your original site) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FPT71FLL2X"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-FPT71FLL2X');
-  </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FPT71FLL2X"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-FPT71FLL2X');
+    </script>
 </head>
-<body class="bg-white text-gray-800 transition-colors duration-300">
+<body class="bg-white text-gray-800">
 
-  <!-- Header -->
-  <header class="sticky top-0 z-50 bg-white dark:bg-gray-900 shadow-sm">
-    <div class="container mx-auto flex justify-between items-center py-4 px-6">
-      <a href="#home" class="text-2xl font-bold text-gray-900 dark:text-white">Alessandro Sparacio, Ph.D.</a>
-      <nav class="hidden md:flex space-x-6">
-        <a href="#about" class="hover:text-blue-600">About</a>
-        <a href="#presentation" class="hover:text-blue-600">Presentation</a>
-        <a href="#events" class="hover:text-blue-600">Events</a>
-        <a href="#publications" class="hover:text-blue-600">Publications</a>
-        <a href="#interviews" class="hover:text-blue-600">Press</a>
-        <a href="#projects" class="hover:text-blue-600">Projects</a>
-        <a href="#contact" class="hover:text-blue-600">Contact</a>
-      </nav>
-      <button id="dark-toggle" class="p-2 rounded bg-gray-200 dark:bg-gray-700" aria-label="Toggle dark mode">
-        <i class="fas fa-moon text-gray-700 dark:text-yellow-300"></i>
-      </button>
-    </div>
-  </header>
-
-  <!-- Hero -->
-  <section id="home" class="relative text-white py-24">
-    <div class="absolute inset-0 animated-bg opacity-90"></div>
-    <div class="relative container mx-auto px-6 flex flex-col md:flex-row items-center">
-      <div class="md:w-2/3 text-center md:text-left">
-        <h1 class="text-5xl md:text-6xl font-bold mb-4">Research Scientist</h1>
-        <p class="text-xl max-w-2xl mb-6">Advancing mental health through open, equitable science — mindfulness, stress, sleep, and digital biomarkers.</p>
-        <a href="#contact" class="bg-blue-600 px-6 py-3 rounded-lg font-semibold shadow-lg hover:bg-blue-700 transition transform hover:scale-105">Get in Touch</a>
-      </div>
-      <div class="md:w-1/3 mt-8 md:mt-0 flex justify-center">
-        <img 
-          src="https://media.licdn.com/dms/image/v2/D5603AQF6tONjEAvqEQ/profile-displayphoto-shrink_800_800/B56ZRO2RRfGoAk-/0/1736489638534" 
-          alt="Headshot of Alessandro Sparacio" 
-          class="rounded-full shadow-2xl w-64 h-64 object-cover border-4 border-white"
-          onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=400&q=80&auto=format&fit=crop';">
-      </div>
-    </div>
-    <!-- Featured logos carousel: uses your existing local assets only -->
-    <div class="mt-12 container mx-auto">
-      <span class="block text-center text-sm text-gray-200 uppercase mb-4">Featured In</span>
-      <div class="logo-carousel">
-        <div class="logo-track">
-          <img src="jmir.png" alt="JMIR Mental Health logo" onerror="this.style.display='none'">
-          <img src="nature2.png" alt="Nature Human Behaviour graphic" onerror="this.style.display='none'">
-          <img src="rep.png" alt="La Repubblica logo" onerror="this.style.display='none'">
-          <img src="medxpress.png" alt="Medical Xpress logo" onerror="this.style.display='none'">
-          <!-- repeat to enable seamless loop -->
-          <img src="jmir.png" alt="JMIR Mental Health logo" onerror="this.style.display='none'">
-          <img src="nature2.png" alt="Nature Human Behaviour graphic" onerror="this.style.display='none'">
-          <img src="rep.png" alt="La Repubblica logo" onerror="this.style.display='none'">
-          <img src="medxpress.png" alt="Medical Xpress logo" onerror="this.style.display='none'">
+    <header id="main-header" class="bg-white py-4 px-6 md:px-10 sticky top-0 z-50 transition-shadow duration-300">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="/" class="text-2xl font-bold text-gray-900">Alessandro Sparacio, Ph.D.</a>
+            <nav id="desktop-nav" class="hidden md:flex space-x-6">
+                <a href="#about" class="nav-link text-gray-600 hover:text-blue-600 transition">About</a>
+                <a href="#events" class="nav-link text-gray-600 hover:text-blue-600 transition">Events</a>
+                <a href="#publications" class="nav-link text-gray-600 hover:text-blue-600 transition">Publications</a>
+                <a href="#interviews" class="nav-link text-gray-600 hover:text-blue-600 transition">Press</a>
+                <a href="#projects" class="nav-link text-gray-600 hover:text-blue-600 transition">Projects</a>
+                <a href="#contact" class="nav-link text-gray-600 hover:text-blue-600 transition">Contact</a>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden p-2 text-gray-600 hover:text-blue-600 focus:outline-none">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
         </div>
-      </div>
-    </div>
-  </section>
+        <nav id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-white shadow-lg py-4">
+            <a href="#about" class="block py-2 px-6 text-gray-600 hover:text-blue-600 transition border-b">About</a>
+            <a href="#events" class="block py-2 px-6 text-gray-600 hover:text-blue-600 transition border-b">Events</a>
+            <a href="#publications" class="block py-2 px-6 text-gray-600 hover:text-blue-600 transition border-b">Publications</a>
+            <a href="#interviews" class="block py-2 px-6 text-gray-600 hover:text-blue-600 transition border-b">Press</a>
+            <a href="#projects" class="block py-2 px-6 text-gray-600 hover:text-blue-600 transition border-b">Projects</a>
+            <a href="#contact" class="block py-2 px-6 text-gray-600 hover:text-blue-600 transition">Contact</a>
+        </nav>
+    </header>
 
-  <!-- About -->
-  <section id="about" class="py-20 bg-gray-50 dark:bg-gray-800">
-    <div class="container mx-auto px-6 text-center max-w-3xl fade-in-up">
-      <h2 class="text-4xl font-bold mb-6">About Me</h2>
-      <p class="text-lg text-gray-700 dark:text-gray-300 mb-4">Research Scientist at A*STAR focusing on cognition, mood, stress, and equitable open science. I design trials and meta-analyses that turn rigorous methods into practical tools for well‑being.</p>
-      <blockquote class="italic text-blue-600 dark:text-blue-400">“Our multi‑site Nature Human Behaviour study shows brief, self‑administered mindfulness reduces stress.”</blockquote>
-    </div>
-  </section>
-
-  <!-- Featured Presentation (kept from your original site) -->
-  <section id="presentation" class="py-20 bg-white dark:bg-gray-900">
-    <div class="container mx-auto px-6">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl md:text-4xl font-bold">Featured Presentation</h2>
-        <p class="text-gray-600 dark:text-gray-300 mt-2">Quickfire Pitch at the Global Young Scientists Summit (GYSS) 2025.</p>
-      </div>
-      <div class="max-w-4xl mx-auto shadow-2xl">
-        <div class="video-container">
-          <iframe src="https://www.youtube.com/embed/C2iK7nwVskc" title="GYSS 2025 Quickfire Pitch by Alessandro Sparacio" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Events (uses your existing images) -->
-  <section id="events" class="py-20 bg-gray-50 dark:bg-gray-800">
-    <div class="container mx-auto px-6">
-      <h2 class="text-4xl font-bold text-center mb-12">Upcoming Events</h2>
-      <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
-        <article class="bg-white dark:bg-gray-900 rounded-xl shadow-md overflow-hidden flex flex-col card-hover">
-          <img src="event_mindfulness.png" alt="Manchester Mindfulness Festival poster" class="w-full h-48 object-cover" loading="lazy" onerror="this.style.display='none'">
-          <div class="p-6 flex flex-col flex-grow">
-            <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Brief Mindfulness for Real‑Life Stress Relief</h3>
-            <div class="text-sm font-medium text-gray-500 dark:text-gray-300 mt-2 space-y-1">
-              <p><strong>Date:</strong> 30 Aug 2025, 10–11am UK · Online</p>
+    <main>
+        <section id="home" class="relative text-white pt-24 pb-32">
+            <div class="absolute inset-0">
+                <img 
+                    src="https://images.unsplash.com/photo-1562474541-07ed748b1d46?q=80&w=1632&auto=format&fit=crop" 
+                    srcset="https://images.unsplash.com/photo-1562474541-07ed748b1d46?q=80&w=768&auto=format&fit=crop 768w, https://images.unsplash.com/photo-1562474541-07ed748b1d46?q=80&w=1632&auto=format&fit=crop 1632w"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    alt="Panoramic view of the Singapore skyline at sunset" 
+                    class="w-full h-full object-cover" 
+                    loading="eager">
+                <div class="absolute inset-0 bg-gray-900 opacity-60"></div>
             </div>
-            <p class="text-gray-600 dark:text-gray-300 mt-2 flex-grow">Findings from a large multi‑site study on practical, brief exercises.</p>
-            <a href="https://www.eventbrite.co.uk/e/the-manchester-mindfulness-festival-online-events-tickets-1334931980489?aff=oddtdtcreator" target="_blank" class="mt-4 bg-blue-600 text-white text-center font-semibold py-2 px-4 rounded-lg hover:bg-blue-700 transition">View Event</a>
-          </div>
-        </article>
-        <article class="bg-white dark:bg-gray-900 rounded-xl shadow-md overflow-hidden flex flex-col card-hover">
-          <img src="event_nus.png" alt="Replication crisis workshop poster at NUS" class="w-full h-48 object-cover" loading="lazy" onerror="this.style.display='none'">
-          <div class="p-6 flex flex-col flex-grow">
-            <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Workshop — The Replication Crisis in Science</h3>
-            <div class="text-sm font-medium text-gray-500 dark:text-gray-300 mt-2 space-y-1">
-              <p><strong>Date:</strong> 2 Oct 2025, 2–5pm · Singapore</p>
+            
+            <div class="relative container mx-auto px-6 flex flex-col md:flex-row items-center">
+                <div class="md:w-2/3 text-center md:text-left">
+                    <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-4 fade-in-up">Research Scientist</h1>
+                    <p class="text-lg md:text-xl text-gray-200 max-w-2xl mb-6 fade-in-up delay-1">
+                        Advancing mental health through rigorous, open, and equitable science, with a focus on non-pharmacological interventions for stress, mood, and sleep.
+                    </p>
+                    <div class="mb-8 fade-in-up delay-2">
+                        <span class="text-sm text-gray-300 uppercase tracking-wider">Featured In:</span>
+                        <a href="https://www.nature.com/nathumbehav/volumes/8/issues/9" target="_blank" class="font-semibold text-white italic hover:underline ml-2">Nature Human Behaviour</a>
+                    </div>
+                    <a href="#contact" class="bg-blue-600 text-white font-semibold py-3 px-8 rounded-lg shadow-lg hover:bg-blue-700 transition transform hover:scale-105 fade-in-up delay-3">Get in Touch</a>
+                </div>
+                <div class="md:w-1/3 mt-10 md:mt-0 flex justify-center fade-in-up delay-1">
+                    <img src="https://media.licdn.com/dms/image/v2/D5603AQF6tONjEAvqEQ/profile-displayphoto-shrink_800_800/B56ZRO2RRfGoAk-/0/1736489638534?e=1758758400&v=beta&t=XOW3cfx83SuHIq0eF7af2OMW8pFkWEuKpleyUxO5ows" 
+                         alt="Professional headshot of Alessandro Sparacio" 
+                         class="rounded-full shadow-2xl w-64 h-64 md:w-80 md:h-80 object-cover border-4 border-white/50" 
+                         loading="lazy">
+                </div>
             </div>
-            <p class="text-gray-600 dark:text-gray-300 mt-2 flex-grow">How reproducibility strengthens scientific progress in Singapore.</p>
-            <a href="https://medicine.nus.edu.sg/cbme/replication-crisis-workshop/" target="_blank" class="mt-4 bg-blue-600 text-white text-center font-semibold py-2 px-4 rounded-lg hover:bg-blue-700 transition">View Event</a>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
+        </section>
 
-  <!-- Publications (keeps your original images) -->
-  <section id="publications" class="py-20 bg-white dark:bg-gray-900">
-    <div class="container mx-auto px-6">
-      <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Featured Publications</h2>
-      <div class="max-w-4xl mx-auto space-y-8">
-        <article class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700 shadow-sm flex flex-col sm:flex-row gap-6 card-hover">
-          <div class="sm:w-1/3 flex-shrink-0 publication-image-container"><img src="jmir.png" alt="Graphical abstract for JMIR study" class="rounded-lg" onerror="this.style.display='none'"></div>
-          <div class="sm:w-2/3">
-            <div class="flex space-x-2 mb-2"><span class="badge bg-blue-100 text-blue-800">JMIR Mental Health</span><span class="badge bg-green-100 text-green-800">Pilot RCT</span></div>
-            <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Feasibility of a Smartphone‑Delivered Mindfulness Intervention</h3>
-            <p class="text-gray-600 dark:text-gray-300 mt-2">Sham control to isolate true stress‑reducing effects from placebo.</p>
-            <a href="https://mental.jmir.org/2025/1/e77793" target="_blank" class="text-blue-600 hover:underline mt-3 inline-block font-semibold">View Publication →</a>
-          </div>
-        </article>
-        <article class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700 shadow-sm flex flex-col sm:flex-row gap-6 card-hover">
-          <div class="sm:w-1/3 flex-shrink-0 publication-image-container"><img src="nature2.png" alt="Graphical abstract for Nature Human Behaviour" class="rounded-lg" onerror="this.style.display='none'"></div>
-          <div class="sm:w-2/3">
-            <div class="flex space-x-2 mb-2"><span class="badge bg-blue-100 text-blue-800">Nature Human Behaviour</span><span class="badge bg-green-100 text-green-800">Multi‑Site Study</span></div>
-            <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Self‑administered mindfulness interventions reduce stress</h3>
-            <p class="text-gray-600 dark:text-gray-300 mt-2">Four common exercises tested across 2,200+ participants.</p>
-            <a href="https://doi.org/10.1038/s41562-024-01907-7" target="_blank" class="text-blue-600 hover:underline mt-3 inline-block font-semibold">View Publication →</a>
-          </div>
-        </article>
-        <article class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700 shadow-sm flex flex-col sm:flex-row gap-6 card-hover">
-          <div class="sm:w-1/3 flex-shrink-0 publication-image-container"><img src="meta.png" alt="Graphical abstract for Collabra: Psychology meta-analysis" class="rounded-lg" onerror="this.style.display='none'"></div>
-          <div class="sm:w-2/3">
-            <div class="flex space-x-2 mb-2"><span class="badge bg-blue-100 text-blue-800">Collabra: Psychology</span><span class="badge bg-green-100 text-green-800">Meta‑Analysis</span></div>
-            <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Stress regulation via being in nature and social support</h3>
-            <p class="text-gray-600 dark:text-gray-300 mt-2">Which is more reliable: a walk in the park or a talk with a friend?</p>
-            <a href="https://online.ucpress.edu/collabra/article/9/1/77343/196335" target="_blank" class="text-blue-600 hover:underline mt-3 inline-block font-semibold">View Publication →</a>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
+        <section id="about" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">About Me</h2>
+                </div>
+                
+                <div class="max-w-4xl mx-auto">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12 text-center">
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <i class="fas fa-brain text-3xl text-blue-600 mb-3"></i>
+                            <h3 class="font-semibold text-gray-800">Mental Health & Cognition</h3>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <i class="fas fa-vial-circle-check text-3xl text-blue-600 mb-3"></i>
+                            <h3 class="font-semibold text-gray-800">Clinical Trials</h3>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <i class="fas fa-heart-pulse text-3xl text-blue-600 mb-3"></i>
+                            <h3 class="font-semibold text-gray-800">Digital Biomarkers</h3>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <i class="fas fa-spa text-3xl text-blue-600 mb-3"></i>
+                            <h3 class="font-semibold text-gray-800">Mindfulness</h3>
+                        </div>
+                    </div>
 
-  <!-- Interviews & Press (keeps your original logos/links) -->
-  <section id="interviews" class="py-20 bg-gray-50 dark:bg-gray-800">
-    <div class="container mx-auto px-6">
-      <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Interviews & Press</h2>
-      <div class="max-w-4xl mx-auto space-y-8">
-        <article class="bg-white dark:bg-gray-900 p-6 rounded-lg border border-gray-200 dark:border-gray-700 shadow-sm flex flex-col sm:flex-row items-center gap-6 card-hover">
-          <div class="flex-shrink-0 w-48 sm:w-1/3 h-20 flex items-center justify-center"><img src="rep.png" alt="La Repubblica logo" class="max-w-full max-h-full" onerror="this.style.display='none'"></div>
-          <div class="text-center sm:text-left">
-            <p class="text-gray-600 dark:text-gray-300">Interview on findings from our multi‑site mindfulness study.</p>
-            <a href="https://www.repubblica.it/venerdi/2024/07/29/news/mindfulness_ansia_stress_esercizi-423419156/" target="_blank" class="text-blue-600 hover:underline mt-2 inline-block font-semibold">Read Article →</a>
-          </div>
-        </article>
-        <article class="bg-white dark:bg-gray-900 p-6 rounded-lg border border-gray-200 dark:border-gray-700 shadow-sm flex flex-col sm:flex-row items-center gap-6 card-hover">
-          <div class="flex-shrink-0 w-48 sm:w-1/3 h-20 flex items-center justify-center"><img src="medxpress.png" alt="Medical Xpress logo" class="max-w-full max-h-full" onerror="this.style.display='none'"></div>
-          <div class="text-center sm:text-left">
-            <p class="text-gray-600 dark:text-gray-300">Coverage of our self‑administered mindfulness interventions research.</p>
-            <a href="https://medicalxpress.com/news/2024-06-large-scale-short-term-impact.html" target="_blank" class="text-blue-600 hover:underline mt-2 inline-block font-semibold">Read Article →</a>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
+                    <article class="bg-white p-8 rounded-xl shadow-md space-y-4">
+                        <p class="text-gray-700 text-lg leading-relaxed">As a Research Scientist at A*STAR, I am dedicated to advancing mental health research, with a focus on cognition, mood, and stress.</p>
+                        
+                        <blockquote class="bg-blue-50 border-l-4 border-blue-500 p-4 my-4 rounded-r-lg">
+                            <p class="text-gray-700 text-lg leading-relaxed italic">A cornerstone of my career has been leading a large-scale project on self-administered mindfulness. Our findings, published in <span class="font-semibold not-italic text-gray-900">Nature Human Behaviour</span>, demonstrated that mindfulness significantly reduces stress.</p>
+                        </blockquote>
+                        
+                        <p class="text-gray-700 text-lg leading-relaxed">This work has led to opportunities like being a Keynote Speaker at the 4th Annual International Conference of Thai Clinical Psychologists and an invitation to present at the Global Young Scientists Summit (GYSS) 2025.</p>
+                        <p class="text-gray-700 text-lg leading-relaxed">My doctoral research at Université Grenoble Alpes and Swansea University involved two comprehensive meta-analyses, identifying critical gaps that my multi-site study aimed to address. Since joining A*STAR, I have expanded my expertise into clinical trials and digital biomarkers, leading a decentralized pilot trial using Heart Rate Variability (HRV) to measure stress.</p>
+                        <p class="text-gray-700 text-lg leading-relaxed">I earned my Ph.D. with distinction for excellence in work and exemplary Open Science practices, building upon a Master's in Social and Occupational Psychology.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
 
-  <!-- Project (uses your existing recruit.png) -->
-  <section id="projects" class="py-20 bg-white dark:bg-gray-900">
-    <div class="container mx-auto px-6">
-      <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Current Project</h2>
-      <div class="max-w-4xl mx-auto bg-gray-50 dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700 shadow-sm flex flex-col sm:flex-row gap-6 card-hover">
-        <div class="sm:w-1/3 flex-shrink-0 publication-image-container"><img src="recruit.png" alt="Recruitment graphic for mindfulness study" class="rounded-lg" onerror="this.style.display='none'"></div>
-        <div class="sm:w-2/3">
-          <div class="flex justify-between items-start mb-2">
-            <h3 class="text-2xl font-semibold text-gray-900 dark:text-white">Building Resilience Across Socioeconomic Contexts</h3>
-            <span class="badge bg-yellow-100 text-yellow-800 flex-shrink-0 ml-4">Actively Recruiting</span>
-          </div>
-          <p class="text-gray-700 dark:text-gray-300 text-lg leading-relaxed">NMRC‑funded study testing different mindfulness training structures to discover optimal stress‑reduction while ensuring health equity through diverse international recruitment.</p>
-          <div class="mt-6"><a href="https://osf.io/7mnqd" target="_blank" class="bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg shadow-lg hover:bg-blue-700 transition">Learn More & Collaborate</a></div>
+        <section id="presentation" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Featured Presentation</h2>
+                    <p class="text-gray-600 mt-2">My "Quickfire Pitch" at the Global Young Scientists Summit (GYSS) 2025.</p>
+                </div>
+                <div class="max-w-4xl mx-auto shadow-2xl">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/C2iK7nwVskc" title="YouTube video player showcasing a presentation by Alessandro Sparacio" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="events" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Upcoming Events</h2>
+                </div>
+                <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
+                    <article class="bg-white rounded-xl shadow-md overflow-hidden flex flex-col">
+                         <img src="event_mindfulness.png" alt="Poster for the Manchester Mindfulness Festival" class="w-full h-48 object-cover" loading="lazy">
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-xl font-semibold text-gray-900">Brief Mindfulness for Real-Life Stress Relief: Evidence from a Multi-Site Study</h3>
+                            <div class="text-sm font-medium text-gray-500 mt-2 space-y-1">
+                                <p><strong>Date:</strong> 30 August 2025, 10-11am, UK</p>
+                                <p><strong>Location:</strong> Online</p>
+                            </div>
+                            <p class="text-gray-600 mt-2 flex-grow">A talk at The Manchester Mindfulness Festival exploring findings from a large-scale study on the practical applications of brief mindfulness exercises.</p>
+                            <a href="https://www.eventbrite.co.uk/e/the-manchester-mindfulness-festival-online-events-tickets-1334931980489?aff=oddtdtcreator" target="_blank" class="mt-4 bg-blue-600 text-white text-center font-semibold py-2 px-4 rounded-lg hover:bg-blue-700 transition">View Event</a>
+                        </div>
+                    </article>
+                    <article class="bg-white rounded-xl shadow-md overflow-hidden flex flex-col">
+                        <img src="event_nus.png" alt="Workshop poster for the Replication Crisis in Science" class="w-full h-48 object-cover" loading="lazy">
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-xl font-semibold text-gray-900">Workshop - The Replication Crisis in Science and Medicine</h3>
+                            <div class="text-sm font-medium text-gray-500 mt-2 space-y-1">
+                                <p><strong>Date:</strong> 2 October 2025, 2-5pm, Singapore</p>
+                                <p><strong>Location:</strong> Singapore</p>
+                            </div>
+                            <p class="text-gray-600 mt-2 flex-grow">A workshop at NUS Medicine discussing the challenges of the replication crisis and how embracing reproducibility can strengthen scientific progress in Singapore.</p>
+                            <a href="https://medicine.nus.edu.sg/cbme/replication-crisis-workshop/" target="_blank" class="mt-4 bg-blue-600 text-white text-center font-semibold py-2 px-4 rounded-lg hover:bg-blue-700 transition">View Event</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="publications" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Featured Publications</h2>
+                </div>
+                <div class="max-w-4xl mx-auto space-y-8">
+                    <article class="bg-gray-50 p-6 rounded-lg border border-gray-200 shadow-sm flex flex-col sm:flex-row gap-6">
+                        <div class="sm:w-1/3 flex-shrink-0 publication-image-container">
+                            <img src="jmir.png" alt="Graphical abstract for JMIR publication" class="rounded-lg">
+                        </div>
+                        <div class="sm:w-2/3">
+                            <div class="flex space-x-2 mb-2">
+                                <span class="badge bg-blue-100 text-blue-800">JMIR Mental Health</span>
+                                <span class="badge bg-green-100 text-green-800">Pilot RCT</span>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-900">Feasibility of a Smartphone-Delivered Mindfulness Intervention</h3>
+                            <p class="font-semibold mt-3 text-gray-800">The Gist:</p>
+                            <p class="text-gray-600 text-base">Is it the mindfulness, or is it just the placebo effect? This study used a sham control to see what's really behind the stress-reducing benefits of digital wellness apps.</p>
+                            <div class="mt-4 flex flex-wrap gap-x-4 gap-y-2 font-semibold text-sm">
+                                <a href="https://mental.jmir.org/2025/1/e77793" target="_blank" class="text-blue-600 hover:underline">View Publication →</a>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article class="bg-gray-50 p-6 rounded-lg border border-gray-200 shadow-sm flex flex-col sm:flex-row gap-6">
+                        <div class="sm:w-1/3 flex-shrink-0 publication-image-container">
+                            <img src="nature2.png" alt="Graphical abstract for Nature Human Behaviour publication" class="rounded-lg">
+                        </div>
+                        <div class="sm:w-2/3">
+                            <div class="flex space-x-2 mb-2">
+                                <span class="badge bg-blue-100 text-blue-800">Nature Human Behaviour</span>
+                                <span class="badge bg-green-100 text-green-800">Multi-Site Study</span>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-900">Self-administered mindfulness interventions reduce stress</h3>
+                            <p class="font-semibold mt-3 text-gray-800">The Gist:</p>
+                            <p class="text-gray-600 text-base">Mindfulness apps are everywhere, but do they actually work for stress? We tested four common exercises on over 2,200 people to find out.</p>
+                            <div class="mt-4 flex flex-wrap gap-x-4 gap-y-2 font-semibold text-sm">
+                                <a href="https://doi.org/10.1038/s41562-024-01907-7" target="_blank" class="text-blue-600 hover:underline">View Publication →</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="bg-gray-50 p-6 rounded-lg border border-gray-200 shadow-sm flex flex-col sm:flex-row gap-6">
+                        <div class="sm:w-1/3 flex-shrink-0 publication-image-container">
+                            <img src="meta.png" alt="Graphical abstract for Collabra: Psychology publication" class="rounded-lg">
+                        </div>
+                        <div class="sm:w-2/3">
+                           <div class="flex space-x-2 mb-2">
+                                <span class="badge bg-blue-100 text-blue-800">Collabra: Psychology</span>
+                                <span class="badge bg-green-100 text-green-800">Meta-Analysis</span>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-900">Stress regulation via being in nature and social support</h3>
+                            <p class="font-semibold mt-3 text-gray-800">The Gist:</p>
+                            <p class="text-gray-600 text-base">Which is a more reliable stress buster: a walk in the park or a talk with a friend? Our meta-analysis of the scientific literature revealed a clear winner.</p>
+                            <div class="mt-4 flex flex-wrap gap-x-4 gap-y-2 font-semibold text-sm">
+                                <a href="https://online.ucpress.edu/collabra/article/9/1/77343/196335" target="_blank" class="text-blue-600 hover:underline">View Publication →</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="interviews" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Interviews & Press</h2>
+                </div>
+                <div class="max-w-4xl mx-auto space-y-8">
+                    <article class="bg-white p-6 rounded-lg border border-gray-200 shadow-sm flex flex-col sm:flex-row items-center gap-6 sm:gap-8">
+                        <div class="flex-shrink-0 w-48 sm:w-1/3 h-20 flex items-center justify-center">
+                            <img src="rep.png" alt="La Repubblica Logo" class="max-w-full max-h-full">
+                        </div>
+                        <div class="text-center sm:text-left">
+                             <p class="text-gray-600">An interview discussing the findings of our multi-site study on the effectiveness of mindfulness for stress reduction.</p>
+                            <a href="https://www.repubblica.it/venerdi/2024/07/29/news/mindfulness_ansia_stress_esercizi-423419156/" target="_blank" class="text-blue-600 hover:underline mt-2 inline-block font-semibold">Read Article →</a>
+                        </div>
+                    </article>
+                    <article class="bg-white p-6 rounded-lg border border-gray-200 shadow-sm flex flex-col sm:flex-row items-center gap-6 sm:gap-8">
+                         <div class="flex-shrink-0 w-48 sm:w-1/3 h-20 flex items-center justify-center">
+                            <img src="medxpress.png" alt="Medical Xpress Logo" class="max-w-full max-h-full">
+                        </div>
+                        <div class="text-center sm:text-left">
+                            <p class="text-gray-600">A discussion about our research on self-administered mindfulness interventions and their impact on stress.</p>
+                            <a href="https://medicalxpress.com/news/2024-06-large-scale-short-term-impact.html" target="_blank" class="text-blue-600 hover:underline mt-2 inline-block font-semibold">Read Article →</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+        
+        <section id="projects" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Current Project</h2>
+                </div>
+                <div class="max-w-4xl mx-auto">
+                     <article class="bg-gray-50 p-6 rounded-lg border border-gray-200 shadow-sm flex flex-col sm:flex-row gap-6">
+                        <div class="sm:w-1/3 flex-shrink-0 publication-image-container">
+                            <img src="recruit.png" alt="Recruitment graphic for mindfulness research study" class="rounded-lg">
+                        </div>
+                        <div class="sm:w-2/3">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-2xl font-semibold text-gray-900">Building Resilience Across Socioeconomic Contexts</h3>
+                                <span class="badge bg-yellow-100 text-yellow-800 flex-shrink-0 ml-4">Actively Recruiting</span>
+                            </div>
+                            <p class="text-gray-700 text-lg leading-relaxed">As Principal Investigator on this NMRC-funded study, I am testing different mindfulness training structures to discover the optimal way to reduce stress. A key goal is to ensure health equity by recruiting a diverse, international sample.</p>
+                            <div class="mt-6">
+                                <a href="https://osf.io/7mnqd" target="_blank" class="bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg shadow-lg hover:bg-blue-700 transition transform hover:scale-105">Learn More & Collaborate</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer id="contact" class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-4">Contact</h2>
+            <p class="text-gray-400 mb-6">Feel free to reach out for collaborations or inquiries.</p>
+            <div class="mb-8">
+                <a href="mailto:alessandro.sparacio@sics.a-star.edu.sg" class="bg-blue-600 text-white font-semibold py-3 px-4 sm:px-8 rounded-lg shadow-lg hover:bg-blue-700 transition break-all">
+                    alessandro.sparacio@sics.a-star.edu.sg
+                </a>
+            </div>
+            <div class="flex justify-center space-x-6 text-2xl">
+                <a href="https://x.com/asparacio992" target="_blank" class="text-gray-400 hover:text-white transition" aria-label="X (formerly Twitter)"><i class="fab fa-x-twitter"></i></a>
+                <a href="https://www.linkedin.com/in/alessandro-sparacio/" target="_blank" class="text-gray-400 hover:text-white transition" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://osf.io/tp7gm" target="_blank" class="text-gray-400 hover:text-white transition" aria-label="Open Science Framework"><i class="fas fa-flask"></i></a>
+                <a href="https://orcid.org/0009-0008-9818-3920" target="_blank" class="text-gray-400 hover:text-white transition" aria-label="ORCID"><i class="fab fa-orcid"></i></a>
+                <a href="https://www.researchgate.net/profile/Alessandro-Sparacio-3" target="_blank" class="text-gray-400 hover:text-white transition" aria-label="ResearchGate"><i class="fab fa-researchgate"></i></a>
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </footer>
 
-  <!-- Contact -->
-  <footer id="contact" class="bg-gray-900 text-white py-16">
-    <div class="container mx-auto px-6 text-center max-w-xl">
-      <h2 class="text-3xl font-bold mb-4">Contact</h2>
-      <p class="text-gray-400 mb-6">Collaborations, speaking engagements, or inquiries – let’s connect.</p>
-      <div class="mb-8">
-        <a href="mailto:alessandro.sparacio@sics.a-star.edu.sg" class="bg-blue-600 text-white font-semibold py-3 px-4 sm:px-8 rounded-lg shadow-lg hover:bg-blue-700 transition break-all">alessandro.sparacio@sics.a-star.edu.sg</a>
-      </div>
-      <form class="space-y-4 max-w-xl mx-auto">
-        <input type="text" placeholder="Your Name" class="w-full px-4 py-3 rounded-lg text-gray-900" required>
-        <input type="email" placeholder="Your Email" class="w-full px-4 py-3 rounded-lg text-gray-900" required>
-        <textarea placeholder="Message" rows="4" class="w-full px-4 py-3 rounded-lg text-gray-900" required></textarea>
-        <button type="submit" class="bg-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-blue-700">Send Message</button>
-      </form>
-      <div class="flex justify-center space-x-6 mt-8 text-2xl">
-        <a href="https://x.com/asparacio992" target="_blank" aria-label="X (formerly Twitter)" class="text-gray-300 hover:text-white"><i class="fab fa-x-twitter"></i></a>
-        <a href="https://www.linkedin.com/in/alessandro-sparacio/" target="_blank" aria-label="LinkedIn" class="text-gray-300 hover:text-white"><i class="fab fa-linkedin"></i></a>
-        <a href="https://osf.io/tp7gm" target="_blank" aria-label="Open Science Framework" class="text-gray-300 hover:text-white"><i class="fas fa-flask"></i></a>
-        <a href="https://orcid.org/0009-0008-9818-3920" target="_blank" aria-label="ORCID" class="text-gray-300 hover:text-white"><i class="fab fa-orcid"></i></a>
-        <a href="https://www.researchgate.net/profile/Alessandro-Sparacio-3" target="_blank" aria-label="ResearchGate" class="text-gray-300 hover:text-white"><i class="fab fa-researchgate"></i></a>
-      </div>
-    </div>
-  </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // --- Mobile Menu ---
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
 
-  <script>
-    // Dark mode toggle
-    const toggle = document.getElementById('dark-toggle');
-    toggle.addEventListener('click', () => document.documentElement.classList.toggle('dark'));
-  </script>
+            // --- Header Scroll Effect ---
+            const header = document.getElementById('main-header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('header-scrolled');
+                } else {
+                    header.classList.remove('header-scrolled');
+                }
+            });
+
+            // --- Active Nav Link Highlighting ---
+            const sections = document.querySelectorAll('main > section[id]');
+            const navLinks = document.querySelectorAll('#desktop-nav a.nav-link');
+            const observerOptions = { root: null, rootMargin: '0px', threshold: 0.4 };
+
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const id = entry.target.getAttribute('id');
+                        navLinks.forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href') === `#${id}`) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+
+            // --- Fade-in Animations on Scroll ---
+            const animatedElements = document.querySelectorAll('section:not(#home) > div > *');
+            const animationObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in-up');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            animatedElements.forEach(el => {
+                animationObserver.observe(el);
+            });
+        });
+    </script>
 </body>
 </html>
