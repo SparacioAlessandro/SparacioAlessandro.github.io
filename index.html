@@ -32,8 +32,6 @@
         .delay-2 { animation-delay: 0.4s; }
         .delay-3 { animation-delay: 0.6s; }
         @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-        /* Optimization: Apply initial opacity: 0 via a class selector or Tailwind class instead of a general CSS selector for better control. */
-        /* Keeping original CSS for consistency: */
         section:not(#home) > div > * { opacity: 0; } 
     </style>
 
@@ -194,7 +192,49 @@
                 <div class="max-w-4xl mx-auto">
                     <h3 class="text-2xl font-bold text-gray-800 mb-8 text-center">Upcoming</h3>
                     <div class="max-w-lg mx-auto">
-                        <p class="text-center text-gray-500 italic">No upcoming events scheduled at this time. Check back soon!</p>
+                        <article class="bg-white rounded-xl shadow-md overflow-hidden flex flex-col border-2 border-blue-100">
+                            <img src="cattolica.jpg" alt="Seminar at Università Cattolica - Milano" class="w-full h-48 object-cover" loading="lazy">
+                            <div class="p-6 flex flex-col flex-grow">
+                                <h3 class="text-xl font-semibold text-gray-900 leading-tight">Advancing Mindfulness Research: Open Tools, Multi-site Designs, and Methodological Rigor</h3>
+                                <div class="text-sm font-medium text-gray-600 mt-3 space-y-2">
+                                    <div class="flex items-center">
+                                        <i class="fa-solid fa-calendar-days w-4 mr-2 text-blue-500"></i>
+                                        <span><strong>Date:</strong> 26 May 2026</span>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <i class="fa-solid fa-clock w-4 mr-2 text-blue-500"></i>
+                                        <span><strong>Time:</strong> 14:30 - 16:30 (CET)</span>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <i class="fa-solid fa-map-marker-alt w-4 mr-2 text-blue-500"></i>
+                                        <span><strong>Location:</strong> Università Cattolica del Sacro Cuore, Milano (Room TBC)</span>
+                                    </div>
+                                </div>
+                                <p class="text-gray-600 mt-4 text-xs leading-relaxed italic border-t pt-4">
+                                    Building on evidence in Nature Human Behaviour, this talk (conducted in English) introduces a new RCT involving ~25 global sites, integrating HRV biomarkers and prioritizing health equity across diverse populations.
+                                </p>
+                                
+                                <div class="mt-4 border-t pt-4">
+                                    <p class="text-[10px] font-bold text-gray-900 uppercase tracking-wider mb-2">Background Reading:</p>
+                                    <ul class="text-[11px] text-blue-600 space-y-2">
+                                        <li>
+                                            <a href="https://www.nature.com/articles/s41562-024-01907-7" target="_blank" class="hover:underline flex items-start">
+                                                <i class="fa-solid fa-file-lines mt-0.5 mr-2 text-gray-400"></i>
+                                                <span>Nature Human Behaviour (2024): Brief mindfulness reduces stress</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="https://mental.jmir.org/2025//e77793/" target="_blank" class="hover:underline flex items-start">
+                                                <i class="fa-solid fa-file-lines mt-0.5 mr-2 text-gray-400"></i>
+                                                <span>JMIR Mental Health (2025): Smartphone-Delivered Intervention Pilot</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <a href="https://docs.google.com/forms/d/e/1FAIpQLSek7k3SEGKCH2eVG-ccBDxbv1xk9Z_gkCLqzuhzoswzs5H1UQ/viewform?usp=publish-editor" target="_blank" class="mt-5 bg-blue-600 text-white text-center font-semibold py-2 px-4 rounded-lg hover:bg-blue-700 transition">Register Now</a>
+                            </div>
+                        </article>
                     </div>
                 </div>
 
@@ -373,20 +413,14 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            
-            // --- Mobile Menu ---
             const mobileMenuButton = document.getElementById('mobile-menu-button');
             const mobileMenu = document.getElementById('mobile-menu');
-            
             if (mobileMenuButton && mobileMenu) {
                 mobileMenuButton.addEventListener('click', () => {
                     mobileMenu.classList.toggle('hidden');
-                    // Accessibility improvement: toggle aria-expanded attribute
                     const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true' || false;
                     mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
                 });
-
-                // Close mobile menu on link click and on hash change
                 mobileMenu.querySelectorAll('a').forEach(link => {
                     link.addEventListener('click', () => {
                         mobileMenu.classList.add('hidden');
@@ -394,67 +428,43 @@
                     });
                 });
             }
-
-
-            // --- Header Scroll Effect ---
             const header = document.getElementById('main-header');
             if (header) {
-                // Throttle/Debounce for performance is an advanced optimization but good practice
                 window.addEventListener('scroll', () => {
                     if (window.scrollY > 50) {
                         header.classList.add('header-scrolled');
                     } else {
                         header.classList.remove('header-scrolled');
                     }
-                }, { passive: true }); // Use passive listener for better scroll performance
+                }, { passive: true });
             }
-
-            // --- Active Nav Link Highlighting & Scroll Animation Cleanup ---
             const sections = document.querySelectorAll('main > section[id]');
             const navLinks = document.querySelectorAll('#desktop-nav a.nav-link');
-            // Root Margin adjusted to allow the section's title to be visible before activating
             const observerOptions = { root: null, rootMargin: '-100px 0px -60% 0px', threshold: 0.05 }; 
-
             const observer = new IntersectionObserver(entries => {
                 entries.forEach(entry => {
                     const id = entry.target.getAttribute('id');
                     const targetLink = document.querySelector(`#desktop-nav a.nav-link[href="#${id}"]`);
-
                     if (entry.isIntersecting) {
-                        // Highlighting logic for desktop nav
                         navLinks.forEach(link => link.classList.remove('active'));
                         if (targetLink) {
                             targetLink.classList.add('active');
                         }
-
-                        // Fade-in animation logic - apply fade-in to the content of the intersecting section
-                        // The original code uses a separate observer for animation, which is fine, 
-                        // but let's consolidate the logic for simplicity since they both use IntersectionObserver.
-                        // We need to ensure we only apply 'fade-in-up' once per element.
-
                     }
                 });
             }, observerOptions);
-
             sections.forEach(section => {
                 observer.observe(section);
             });
-            
-            // --- Fade-in Animations on Scroll (Optimized) ---
-            // Keep the original animation logic separate as it's cleaner for its specific task.
             const animatedElements = document.querySelectorAll('section:not(#home) > div > *');
             const animationObserver = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        // Use requestAnimationFrame for smoother class application, 
-                        // although for simple classes, direct application is usually fine.
-                        // We will keep the original implementation style for simplicity.
                         entry.target.classList.add('fade-in-up');
                         observer.unobserve(entry.target);
                     }
                 });
-            }, { threshold: 0.1, rootMargin: '0px 0px -10% 0px' }); // Reduced rootMargin slightly
-
+            }, { threshold: 0.1, rootMargin: '0px 0px -10% 0px' });
             animatedElements.forEach(el => {
                 animationObserver.observe(el);
             });
