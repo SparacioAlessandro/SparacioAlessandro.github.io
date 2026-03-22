@@ -1,49 +1,705 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-
-<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
-<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-<link rel="shortcut icon" href="/favicon.ico" />
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-<link rel="manifest" href="/site.webmanifest" />
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Official website of Alessandro Sparacio, Ph.D., a research scientist specializing in mental health and open science practices.">
+    <meta name="description" content="Official website of Alessandro Sparacio, Ph.D., a research scientist at A*STAR specializing in mental health, mindfulness interventions, and open science practices.">
+    <meta name="keywords" content="Alessandro Sparacio, mindfulness, stress reduction, open science, A*STAR, Nature Human Behaviour, clinical trials, HRV, digital biomarkers">
+    <meta name="author" content="Alessandro Sparacio">
     <title>Alessandro Sparacio, Ph.D. | Research Scientist</title>
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"> 
+
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- JSON-LD: Person Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Alessandro Sparacio",
+      "honorificSuffix": "Ph.D.",
+      "jobTitle": "Research Scientist",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "A*STAR (Agency for Science, Technology and Research)",
+        "url": "https://www.a-star.edu.sg"
+      },
+      "url": "https://sparacioalessandro.com",
+      "sameAs": [
+        "https://x.com/asparacio992",
+        "https://www.linkedin.com/in/alessandro-sparacio/",
+        "https://orcid.org/0009-0008-9818-3920",
+        "https://www.researchgate.net/profile/Alessandro-Sparacio-3",
+        "https://osf.io/tp7gm"
+      ],
+      "alumniOf": [
+        {
+          "@type": "CollegeOrUniversity",
+          "name": "Université Grenoble Alpes"
+        },
+        {
+          "@type": "CollegeOrUniversity",
+          "name": "Swansea University"
+        }
+      ],
+      "knowsAbout": ["Mindfulness", "Stress Reduction", "Open Science", "Clinical Trials", "Digital Biomarkers", "Meta-Analysis"]
+    }
+    </script>
+    <!-- JSON-LD: ScholarlyArticle -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ScholarlyArticle",
+      "name": "Self-administered mindfulness interventions reduce stress in a large-scale randomised controlled trial",
+      "author": { "@type": "Person", "name": "Alessandro Sparacio" },
+      "datePublished": "2024",
+      "isPartOf": { "@type": "Periodical", "name": "Nature Human Behaviour" },
+      "url": "https://doi.org/10.1038/s41562-024-01907-7"
+    }
+    </script>
+
     <style>
-        /* Custom Styles */
-        .header-scrolled { box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); }
-        .nav-link.active { color: #2563EB; font-weight: 600; }
-        .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; border-radius: 0.75rem; }
-        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
-        .badge { display: inline-block; padding: 0.25em 0.6em; font-size: 0.75rem; font-weight: 600; line-height: 1; text-align: center; white-space: nowrap; vertical-align: baseline; border-radius: 0.375rem; }
-        .publication-image-container img { width: 100%; height: auto; object-fit: cover; }
-        
-        /* Image Quality Optimization */
-        .crisp-image { 
-            image-rendering: -webkit-optimize-contrast; 
-            image-rendering: crisp-edges; 
-            image-rendering: -moz-crisp-edges; 
-            image-rendering: pixelated;
+        /* ===== @layer: Base ===== */
+        :root {
+            /* Light mode palette — Deep Sea & Sage */
+            --c-bg: #f4f6f3;
+            --c-bg-alt: #eaefea;
+            --c-surface: rgba(255,255,255,0.72);
+            --c-surface-solid: #ffffff;
+            --c-text: #1a2e1a;
+            --c-text-secondary: #4a5d4a;
+            --c-text-muted: #7a8d7a;
+            --c-accent: #1a6b5a;
+            --c-accent-light: #e0f0eb;
+            --c-accent-hover: #145a4a;
+            --c-border: rgba(26,107,90,0.12);
+            --c-glass: rgba(255,255,255,0.55);
+            --c-glass-border: rgba(255,255,255,0.3);
+            --c-hero-overlay: rgba(10,30,28,0.72);
+            --c-card-shadow: 0 4px 24px rgba(26,107,90,0.08);
+            --c-deep: #0a1e1c;
+            --c-sage: #8faa90;
+            --c-foam: #d4e8e0;
+            --c-coral: #e07a5f;
+            --font-display: 'DM Serif Display', Georgia, serif;
+            --font-body: 'Outfit', system-ui, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+            --radius: 16px;
+            --radius-sm: 10px;
+            --header-h: 72px;
+            --transition: 0.35s cubic-bezier(0.4,0,0.2,1);
         }
 
-        /* Fade-in animation */
-        .fade-in-up { animation: fadeInUp 0.8s ease-out forwards; opacity: 0; }
-        .delay-1 { animation-delay: 0.2s; }
-        .delay-2 { animation-delay: 0.4s; }
-        .delay-3 { animation-delay: 0.6s; }
-        @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-        section:not(#home) > div > * { opacity: 0; } 
+        html.dark {
+            --c-bg: #0a1612;
+            --c-bg-alt: #0f1f1a;
+            --c-surface: rgba(15,31,26,0.8);
+            --c-surface-solid: #0f1f1a;
+            --c-text: #e0ece6;
+            --c-text-secondary: #a0b8a8;
+            --c-text-muted: #607868;
+            --c-accent: #4dd8a8;
+            --c-accent-light: rgba(77,216,168,0.1);
+            --c-accent-hover: #6ae8be;
+            --c-border: rgba(77,216,168,0.15);
+            --c-glass: rgba(10,22,18,0.7);
+            --c-glass-border: rgba(77,216,168,0.12);
+            --c-hero-overlay: rgba(5,15,12,0.82);
+            --c-card-shadow: 0 4px 24px rgba(0,0,0,0.3);
+            --c-deep: #e0ece6;
+            --c-sage: #4a6b52;
+            --c-foam: #1a3a2e;
+            --c-coral: #e8956e;
+        }
+
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--c-bg);
+            color: var(--c-text);
+            line-height: 1.7;
+            overflow-x: hidden;
+            transition: background var(--transition), color var(--transition);
+        }
+
+        /* Scroll progress */
+        #scroll-progress {
+            position: fixed; top: 0; left: 0; height: 3px; z-index: 9999;
+            background: linear-gradient(90deg, var(--c-accent), var(--c-coral));
+            width: 0%; transition: width 0.1s linear;
+        }
+
+        /* ===== @layer: Header / Glass ===== */
+        #main-header {
+            position: sticky; top: 0; z-index: 100;
+            height: var(--header-h);
+            background: var(--c-glass);
+            backdrop-filter: blur(20px) saturate(1.4);
+            -webkit-backdrop-filter: blur(20px) saturate(1.4);
+            border-bottom: 1px solid var(--c-glass-border);
+            transition: background var(--transition), box-shadow 0.3s;
+        }
+        #main-header.scrolled { box-shadow: 0 4px 30px rgba(0,0,0,0.08); }
+        .header-inner {
+            max-width: 1200px; margin: 0 auto; height: 100%;
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 0 1.5rem;
+        }
+        .logo {
+            font-family: var(--font-display); font-size: 1.35rem;
+            color: var(--c-text); text-decoration: none;
+            letter-spacing: -0.02em;
+        }
+        .logo span { color: var(--c-accent); }
+
+        /* Desktop nav */
+        .desktop-nav { display: none; align-items: center; gap: 2rem; }
+        @media (min-width: 768px) { .desktop-nav { display: flex; } }
+        .nav-link {
+            font-size: 0.88rem; font-weight: 500; color: var(--c-text-muted);
+            text-decoration: none; position: relative; padding: 0.25rem 0;
+            transition: color var(--transition);
+        }
+        .nav-link::after {
+            content: ''; position: absolute; bottom: -2px; left: 0; width: 0;
+            height: 2px; background: var(--c-accent); border-radius: 2px;
+            transition: width var(--transition);
+        }
+        .nav-link:hover, .nav-link.active { color: var(--c-accent); }
+        .nav-link.active::after, .nav-link:hover::after { width: 100%; }
+
+        /* Dark mode toggle */
+        .theme-toggle {
+            width: 40px; height: 40px; border-radius: 50%;
+            border: 1px solid var(--c-border); background: var(--c-surface);
+            cursor: pointer; display: flex; align-items: center; justify-content: center;
+            color: var(--c-text-muted); font-size: 1rem;
+            transition: all var(--transition);
+        }
+        .theme-toggle:hover { color: var(--c-accent); border-color: var(--c-accent); }
+
+        /* Mobile controls */
+        .mobile-controls { display: flex; align-items: center; gap: 0.75rem; }
+        @media (min-width: 768px) { .mobile-controls .hamburger { display: none; } }
+        .hamburger {
+            width: 40px; height: 40px; border: none; background: none;
+            cursor: pointer; display: flex; flex-direction: column;
+            align-items: center; justify-content: center; gap: 5px;
+        }
+        .hamburger span {
+            display: block; width: 22px; height: 2px;
+            background: var(--c-text); border-radius: 2px;
+            transition: all 0.3s;
+        }
+        .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+        .hamburger.open span:nth-child(2) { opacity: 0; }
+        .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+        /* Mobile drawer */
+        .mobile-backdrop {
+            position: fixed; inset: 0; z-index: 90;
+            background: rgba(0,0,0,0.4); backdrop-filter: blur(4px);
+            opacity: 0; pointer-events: none; transition: opacity 0.3s;
+        }
+        .mobile-backdrop.open { opacity: 1; pointer-events: auto; }
+        .mobile-drawer {
+            position: fixed; top: 0; right: 0; z-index: 95;
+            width: 280px; height: 100vh;
+            background: var(--c-surface-solid); padding: 6rem 2rem 2rem;
+            transform: translateX(100%); transition: transform 0.35s cubic-bezier(0.4,0,0.2,1);
+            box-shadow: -8px 0 30px rgba(0,0,0,0.1);
+        }
+        .mobile-drawer.open { transform: translateX(0); }
+        .mobile-drawer a {
+            display: block; padding: 1rem 0; font-size: 1.1rem;
+            color: var(--c-text); text-decoration: none; font-weight: 500;
+            border-bottom: 1px solid var(--c-border); transition: color var(--transition);
+        }
+        .mobile-drawer a:hover { color: var(--c-accent); }
+
+        /* ===== @layer: Hero ===== */
+        .hero {
+            position: relative; min-height: 85vh;
+            display: flex; align-items: center;
+            overflow: hidden;
+        }
+        .hero-bg {
+            position: absolute; inset: 0;
+        }
+        .hero-bg img {
+            width: 100%; height: 100%; object-fit: cover;
+        }
+        .hero-bg::after {
+            content: ''; position: absolute; inset: 0;
+            background: var(--c-hero-overlay);
+        }
+        .hero-content {
+            position: relative; z-index: 2;
+            max-width: 1200px; margin: 0 auto; padding: 4rem 1.5rem;
+            display: flex; flex-wrap: wrap; align-items: center; gap: 3rem;
+        }
+        .hero-text { flex: 1 1 500px; }
+        .hero-text .overline {
+            font-family: var(--font-mono); font-size: 0.78rem;
+            text-transform: uppercase; letter-spacing: 0.15em;
+            color: var(--c-coral); margin-bottom: 1rem; opacity: 0;
+            animation: fadeUp 0.8s 0.2s forwards;
+        }
+        .hero-text h1 {
+            font-family: var(--font-display); font-size: clamp(2.4rem,5vw,3.8rem);
+            color: #fff; line-height: 1.15; margin-bottom: 1.25rem;
+            opacity: 0; animation: fadeUp 0.8s 0.4s forwards;
+        }
+        .hero-text p {
+            font-size: 1.1rem; line-height: 1.75; color: rgba(255,255,255,0.78);
+            max-width: 540px; margin-bottom: 2rem;
+            opacity: 0; animation: fadeUp 0.8s 0.6s forwards;
+        }
+        .hero-text .featured {
+            font-size: 0.82rem; color: rgba(255,255,255,0.5);
+            text-transform: uppercase; letter-spacing: 0.1em;
+            margin-bottom: 0.5rem;
+            opacity: 0; animation: fadeUp 0.8s 0.7s forwards;
+        }
+        .hero-text .featured a {
+            color: #fff; font-style: italic; text-decoration: none;
+            font-weight: 600; margin-left: 0.5rem;
+        }
+        .hero-text .featured a:hover { text-decoration: underline; }
+        .hero-cta {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            background: var(--c-accent); color: #fff; font-weight: 600;
+            padding: 0.85rem 2rem; border-radius: 50px; text-decoration: none;
+            font-size: 0.95rem; transition: all var(--transition);
+            opacity: 0; animation: fadeUp 0.8s 0.8s forwards;
+        }
+        .hero-cta:hover { background: var(--c-accent-hover); transform: translateY(-2px); box-shadow: 0 8px 25px rgba(26,107,90,0.3); }
+        .hero-portrait {
+            flex: 0 0 auto; text-align: center;
+            opacity: 0; animation: fadeUp 0.8s 0.5s forwards;
+        }
+        .hero-portrait img {
+            width: 260px; height: 260px; border-radius: 50%;
+            object-fit: cover; border: 4px solid rgba(255,255,255,0.25);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        @media (min-width: 768px) {
+            .hero-portrait img { width: 300px; height: 300px; }
+        }
+
+        /* Underwater ambient bubbles on hero */
+        .bubbles {
+            position: absolute; bottom: 0; left: 0; width: 100%; height: 100%;
+            z-index: 1; pointer-events: none; overflow: hidden;
+        }
+        .bubble {
+            position: absolute; bottom: -40px; border-radius: 50%;
+            background: rgba(255,255,255,0.06);
+            animation: rise linear infinite;
+        }
+        @keyframes rise {
+            0% { transform: translateY(0) scale(1); opacity: 0.6; }
+            100% { transform: translateY(-100vh) scale(0.3); opacity: 0; }
+        }
+
+        /* ===== @layer: Sections ===== */
+        section { padding: 6rem 1.5rem; }
+        .section-inner { max-width: 1000px; margin: 0 auto; }
+        .section-title {
+            font-family: var(--font-display); font-size: clamp(1.8rem,3.5vw,2.6rem);
+            color: var(--c-text); text-align: center; margin-bottom: 0.5rem;
+        }
+        .section-subtitle {
+            text-align: center; color: var(--c-text-muted); font-size: 1rem;
+            margin-bottom: 3rem; max-width: 580px; margin-left: auto; margin-right: auto;
+        }
+        .alt-bg { background: var(--c-bg-alt); }
+
+        /* ===== @layer: Cards (Glass) ===== */
+        .glass-card {
+            background: var(--c-surface);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--c-glass-border);
+            border-radius: var(--radius);
+            box-shadow: var(--c-card-shadow);
+            transition: transform var(--transition), box-shadow var(--transition);
+        }
+        .glass-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(26,107,90,0.12);
+        }
+
+        /* ===== @layer: About ===== */
+        .about-pillars {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+            gap: 1.25rem; margin-bottom: 2.5rem;
+        }
+        .pillar {
+            text-align: center; padding: 1.75rem 1rem;
+        }
+        .pillar i {
+            font-size: 1.8rem; color: var(--c-accent); margin-bottom: 0.75rem;
+            display: block;
+        }
+        .pillar h3 {
+            font-size: 0.88rem; font-weight: 600; color: var(--c-text);
+        }
+        .about-prose {
+            padding: 2.5rem; line-height: 1.85;
+        }
+        .about-prose p {
+            color: var(--c-text-secondary); font-size: 1.02rem; margin-bottom: 1rem;
+        }
+        .about-prose p:last-child { margin-bottom: 0; }
+        .highlight-quote {
+            background: var(--c-accent-light); border-left: 3px solid var(--c-accent);
+            padding: 1.25rem 1.5rem; border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            margin: 1.5rem 0; font-style: italic;
+        }
+        .highlight-quote span { font-style: normal; font-weight: 600; color: var(--c-text); }
+
+        /* ===== @layer: Projects ===== */
+        .project-card {
+            display: flex; flex-direction: column; overflow: hidden;
+        }
+        @media (min-width: 640px) {
+            .project-card { flex-direction: row; }
+        }
+        .project-card img {
+            width: 100%; height: 220px; object-fit: cover;
+        }
+        @media (min-width: 640px) {
+            .project-card img { width: 280px; height: auto; }
+        }
+        .project-body {
+            padding: 2rem; flex: 1; display: flex; flex-direction: column;
+        }
+        .badge-row { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.75rem; }
+        .badge {
+            font-family: var(--font-mono); font-size: 0.7rem; font-weight: 500;
+            padding: 0.25em 0.7em; border-radius: 50px;
+            background: var(--c-accent-light); color: var(--c-accent);
+            letter-spacing: 0.02em;
+        }
+        .badge.status { background: var(--c-coral); color: #fff; }
+        .project-body h3 {
+            font-family: var(--font-display); font-size: 1.4rem;
+            color: var(--c-text); margin-bottom: 0.75rem;
+        }
+        .project-body p {
+            color: var(--c-text-secondary); font-size: 0.95rem; margin-bottom: 1.5rem; flex: 1;
+        }
+        .btn {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            background: var(--c-accent); color: #fff; font-weight: 600;
+            padding: 0.7rem 1.5rem; border-radius: 50px; text-decoration: none;
+            font-size: 0.88rem; transition: all var(--transition); border: none; cursor: pointer;
+        }
+        .btn:hover { background: var(--c-accent-hover); transform: translateY(-1px); }
+        .btn-outline {
+            background: transparent; color: var(--c-accent);
+            border: 1.5px solid var(--c-accent);
+        }
+        .btn-outline:hover { background: var(--c-accent); color: #fff; }
+
+        /* ===== @layer: Presentation ===== */
+        .video-wrap {
+            max-width: 800px; margin: 0 auto; border-radius: var(--radius);
+            overflow: hidden; box-shadow: 0 12px 48px rgba(0,0,0,0.15);
+        }
+        .video-container {
+            position: relative; padding-bottom: 56.25%; height: 0;
+        }
+        .video-container iframe {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+        }
+
+        /* ===== @layer: Events ===== */
+        .events-grid {
+            display: grid; gap: 1.5rem;
+        }
+        .event-card {
+            overflow: hidden; display: flex; flex-direction: column;
+        }
+        .event-card img {
+            width: 100%; height: 200px; object-fit: cover;
+        }
+        .event-body {
+            padding: 1.5rem; flex: 1; display: flex; flex-direction: column;
+        }
+        .event-body h3 {
+            font-family: var(--font-display); font-size: 1.2rem;
+            color: var(--c-text); margin-bottom: 0.75rem; line-height: 1.35;
+        }
+        .event-meta { font-size: 0.82rem; color: var(--c-text-muted); margin-bottom: 0.5rem; }
+        .event-meta i { color: var(--c-accent); margin-right: 0.35rem; width: 14px; text-align: center; }
+        .event-body p { color: var(--c-text-secondary); font-size: 0.88rem; flex: 1; margin-top: 0.75rem; }
+        .event-links { margin-top: 1rem; }
+        .event-links a {
+            font-size: 0.78rem; color: var(--c-accent); text-decoration: none;
+        }
+        .event-links a:hover { text-decoration: underline; }
+        .event-btn {
+            display: block; text-align: center; margin-top: auto; padding-top: 1rem;
+        }
+        .event-btn a {
+            display: block; padding: 0.6rem 1rem; border-radius: 50px;
+            font-size: 0.85rem; font-weight: 600; text-decoration: none;
+            transition: all var(--transition);
+        }
+        .event-btn a.live { background: var(--c-accent); color: #fff; }
+        .event-btn a.live:hover { background: var(--c-accent-hover); }
+        .event-btn a.ended { background: var(--c-text-muted); color: #fff; pointer-events: none; opacity: 0.6; }
+        .event-label {
+            display: inline-block; font-family: var(--font-mono); font-size: 0.68rem;
+            text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600;
+            padding: 0.2em 0.6em; border-radius: 50px; margin-bottom: 0.75rem;
+        }
+        .event-label.upcoming { background: var(--c-accent-light); color: var(--c-accent); }
+        .event-label.past { background: var(--c-bg-alt); color: var(--c-text-muted); }
+        .reading-list { margin-top: 1rem; padding-top: 0.75rem; border-top: 1px solid var(--c-border); }
+        .reading-list p { font-family: var(--font-mono); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--c-text-muted); margin-bottom: 0.5rem !important; font-weight: 600; }
+        .reading-list a { display: flex; align-items: start; gap: 0.5rem; font-size: 0.78rem; color: var(--c-accent); text-decoration: none; margin-bottom: 0.4rem; }
+        .reading-list a:hover { text-decoration: underline; }
+        .reading-list a i { color: var(--c-text-muted); margin-top: 2px; font-size: 0.7rem; }
+
+        /* ===== @layer: Publications ===== */
+        .pub-filter {
+            display: flex; justify-content: center; gap: 0.5rem;
+            flex-wrap: wrap; margin-bottom: 2.5rem;
+        }
+        .pub-filter button {
+            font-family: var(--font-mono); font-size: 0.75rem;
+            padding: 0.4em 1em; border-radius: 50px; cursor: pointer;
+            border: 1.5px solid var(--c-border); background: transparent;
+            color: var(--c-text-muted); transition: all var(--transition);
+            text-transform: uppercase; letter-spacing: 0.04em;
+        }
+        .pub-filter button.active, .pub-filter button:hover {
+            background: var(--c-accent); color: #fff; border-color: var(--c-accent);
+        }
+        .pub-list { display: flex; flex-direction: column; gap: 1.5rem; }
+        .pub-card {
+            display: flex; flex-direction: column; overflow: hidden;
+            transition: transform var(--transition), box-shadow var(--transition), opacity 0.4s, max-height 0.5s;
+        }
+        .pub-card.hidden-pub { opacity: 0; max-height: 0; overflow: hidden; padding: 0; margin: 0; border: none; }
+        @media (min-width: 640px) {
+            .pub-card { flex-direction: row; }
+        }
+        .pub-card img {
+            width: 100%; height: 180px; object-fit: cover;
+        }
+        @media (min-width: 640px) {
+            .pub-card img { width: 240px; height: auto; min-height: 180px; }
+        }
+        .pub-body {
+            padding: 1.5rem; flex: 1;
+        }
+        .pub-body h3 {
+            font-family: var(--font-display); font-size: 1.15rem;
+            color: var(--c-text); margin-bottom: 0.5rem; line-height: 1.35;
+        }
+        .pub-gist-label { font-weight: 600; color: var(--c-text); font-size: 0.9rem; margin-top: 0.75rem; }
+        .pub-body p { color: var(--c-text-secondary); font-size: 0.9rem; margin-top: 0.25rem; }
+        .pub-link {
+            display: inline-block; margin-top: 1rem; font-size: 0.85rem;
+            color: var(--c-accent); text-decoration: none; font-weight: 600;
+        }
+        .pub-link:hover { text-decoration: underline; }
+
+        /* ===== @layer: Press ===== */
+        .press-list { display: flex; flex-direction: column; gap: 1.25rem; }
+        .press-card {
+            display: flex; flex-direction: column; align-items: center;
+            gap: 1.5rem; padding: 1.75rem;
+        }
+        @media (min-width: 640px) {
+            .press-card { flex-direction: row; }
+        }
+        .press-logo {
+            flex: 0 0 160px; display: flex; align-items: center; justify-content: center;
+            height: 60px;
+        }
+        .press-logo img { max-width: 100%; max-height: 100%; }
+        .press-text { text-align: center; flex: 1; }
+        @media (min-width: 640px) { .press-text { text-align: left; } }
+        .press-text p { color: var(--c-text-secondary); font-size: 0.92rem; margin-bottom: 0.5rem; }
+        .press-text a { color: var(--c-accent); font-weight: 600; text-decoration: none; font-size: 0.88rem; }
+        .press-text a:hover { text-decoration: underline; }
+
+        /* ===== @layer: Breathing Pacer ===== */
+        .pacer-section { text-align: center; }
+        .pacer-widget {
+            display: flex; flex-direction: column; align-items: center;
+            padding: 3rem 2rem;
+        }
+        .pacer-circle-wrap {
+            position: relative; width: 220px; height: 220px;
+            margin-bottom: 2rem;
+        }
+        .pacer-ring {
+            width: 100%; height: 100%; border-radius: 50%;
+            border: 3px solid var(--c-border);
+            display: flex; align-items: center; justify-content: center;
+            position: relative;
+        }
+        .pacer-dot {
+            width: 60px; height: 60px; border-radius: 50%;
+            background: var(--c-accent); opacity: 0.9;
+            transition: transform 0.1s linear;
+        }
+        .pacer-dot.animating {
+            animation: none; /* controlled via JS */
+        }
+        .pacer-progress {
+            position: absolute; top: 0; left: 0;
+        }
+        .pacer-instruction {
+            font-family: var(--font-display); font-size: 1.5rem;
+            color: var(--c-text); margin-bottom: 0.5rem;
+            min-height: 2.2rem;
+        }
+        .pacer-timer {
+            font-family: var(--font-mono); font-size: 0.85rem;
+            color: var(--c-text-muted); margin-bottom: 1.5rem;
+        }
+        .pacer-controls { display: flex; gap: 0.75rem; flex-wrap: wrap; justify-content: center; }
+        .pacer-controls select {
+            font-family: var(--font-body); font-size: 0.85rem;
+            padding: 0.5rem 1rem; border-radius: 50px;
+            border: 1.5px solid var(--c-border); background: var(--c-surface-solid);
+            color: var(--c-text); cursor: pointer;
+        }
+
+        /* ===== @layer: Footer ===== */
+        footer {
+            background: var(--c-deep);
+            color: rgba(255,255,255,0.8);
+            padding: 4rem 1.5rem 2rem; text-align: center;
+        }
+        html.dark footer { background: #050f0c; }
+        footer h2 { font-family: var(--font-display); font-size: 1.8rem; color: #fff; margin-bottom: 0.5rem; }
+        footer .subtitle { color: rgba(255,255,255,0.5); margin-bottom: 2rem; }
+        .footer-email {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            background: var(--c-accent); color: #fff; font-weight: 600;
+            padding: 0.75rem 1.75rem; border-radius: 50px; text-decoration: none;
+            font-size: 0.9rem; transition: all var(--transition); word-break: break-all;
+        }
+        .footer-email:hover { background: var(--c-accent-hover); transform: translateY(-1px); }
+        .social-links {
+            display: flex; justify-content: center; gap: 1.25rem;
+            margin-top: 2rem; font-size: 1.3rem;
+        }
+        .social-links a {
+            color: rgba(255,255,255,0.4); transition: color var(--transition);
+        }
+        .social-links a:hover { color: #fff; }
+
+        /* Easter egg */
+        .easter-egg-btn {
+            margin-top: 2.5rem; font-size: 0.78rem;
+            color: rgba(255,255,255,0.25); cursor: pointer;
+            background: none; border: none; font-family: var(--font-body);
+            transition: color var(--transition);
+        }
+        .easter-egg-btn:hover { color: rgba(255,255,255,0.6); }
+        .easter-popup {
+            position: fixed; inset: 0; z-index: 200;
+            display: none; align-items: center; justify-content: center;
+            background: rgba(0,0,0,0.6); backdrop-filter: blur(6px);
+        }
+        .easter-popup.show { display: flex; }
+        .easter-card {
+            background: var(--c-surface-solid); border-radius: var(--radius);
+            padding: 2.5rem; max-width: 400px; width: 90%;
+            text-align: center; position: relative;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            animation: popIn 0.3s ease-out;
+        }
+        @keyframes popIn { from { transform: scale(0.9); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+        .easter-card .card-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+        .easter-card h3 { font-family: var(--font-display); font-size: 1.3rem; color: var(--c-text); margin-bottom: 0.75rem; }
+        .easter-card p { color: var(--c-text-secondary); font-size: 0.92rem; line-height: 1.6; font-style: italic; }
+        .easter-card .source { font-size: 0.75rem; color: var(--c-text-muted); margin-top: 0.75rem; font-style: normal; }
+        .easter-close {
+            position: absolute; top: 1rem; right: 1rem;
+            background: none; border: none; color: var(--c-text-muted);
+            cursor: pointer; font-size: 1.2rem;
+        }
+
+        /* ===== @layer: Back to Top ===== */
+        .back-to-top {
+            position: fixed; bottom: 2rem; right: 2rem; z-index: 80;
+            width: 48px; height: 48px; border-radius: 50%;
+            background: var(--c-accent); color: #fff; border: none;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.1rem; cursor: pointer;
+            box-shadow: 0 4px 20px rgba(26,107,90,0.3);
+            opacity: 0; pointer-events: none;
+            transition: all var(--transition); transform: translateY(20px);
+        }
+        .back-to-top.visible {
+            opacity: 1; pointer-events: auto; transform: translateY(0);
+        }
+        .back-to-top:hover { background: var(--c-accent-hover); transform: translateY(-3px); }
+
+        /* ===== @layer: Reveal Animations ===== */
+        .reveal {
+            opacity: 0; transform: translateY(30px);
+            transition: opacity 0.7s cubic-bezier(0.4,0,0.2,1), transform 0.7s cubic-bezier(0.4,0,0.2,1);
+        }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+        .reveal-delay-4 { transition-delay: 0.4s; }
+
+        /* Utility: keyframes */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(24px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Divider wave */
+        .wave-divider {
+            height: 60px; width: 100%; overflow: hidden; line-height: 0;
+            margin-top: -1px;
+        }
+        .wave-divider svg { width: 100%; height: 100%; }
+        .wave-divider .fill-bg { fill: var(--c-bg); }
+        .wave-divider .fill-alt { fill: var(--c-bg-alt); }
+
+        /* Print / a11y */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+        }
+
+        /* Sub-section heading */
+        .sub-heading {
+            font-family: var(--font-display); font-size: 1.4rem;
+            color: var(--c-text); text-align: center; margin-bottom: 2rem;
+        }
+
+        /* footer copyright */
+        .copyright {
+            margin-top: 2.5rem; font-size: 0.72rem;
+            color: rgba(255,255,255,0.2);
+        }
     </style>
 
+    <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-FPT71FLL2X"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -52,432 +708,654 @@
       gtag('config', 'G-FPT71FLL2X');
     </script>
 </head>
-<body class="bg-white text-gray-800 font-['Inter',_sans-serif]">
+<body>
+    <!-- Scroll Progress Bar -->
+    <div id="scroll-progress" aria-hidden="true"></div>
 
-    <header id="main-header" class="bg-white py-4 px-6 md:px-10 sticky top-0 z-50 transition-shadow duration-300">
-        <div class="container mx-auto flex justify-between items-center">
-            <a href="/" class="text-2xl font-bold text-gray-900">Alessandro Sparacio, Ph.D.</a>
-            <nav id="desktop-nav" class="hidden md:flex space-x-6">
-                <a href="#about" class="nav-link text-gray-600 hover:text-blue-600 transition">About</a>
-                <a href="#projects" class="nav-link text-gray-600 hover:text-blue-600 transition">Projects</a>
-                <a href="#events" class="nav-link text-gray-600 hover:text-blue-600 transition">Events</a>
-                <a href="#publications" class="nav-link text-gray-600 hover:text-blue-600 transition">Publications</a>
-                <a href="#interviews" class="nav-link text-gray-600 hover:text-blue-600 transition">Press</a>
-                <a href="#contact" class="nav-link text-gray-600 hover:text-blue-600 transition">Contact</a>
+    <!-- Header -->
+    <header id="main-header">
+        <div class="header-inner">
+            <a href="/" class="logo">Alessandro Sparacio<span>,</span> Ph.D.</a>
+            <nav class="desktop-nav" aria-label="Main navigation">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#events" class="nav-link">Events</a>
+                <a href="#publications" class="nav-link">Publications</a>
+                <a href="#press" class="nav-link">Press</a>
+                <a href="#breathe" class="nav-link">Breathe</a>
+                <a href="#contact" class="nav-link">Contact</a>
             </nav>
-            <button id="mobile-menu-button" class="md:hidden p-2 text-gray-600 hover:text-blue-600 focus:outline-none">
-                <i class="fas fa-bars text-xl"></i>
-            </button>
+            <div class="mobile-controls">
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
         </div>
-        <nav id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-white shadow-lg py-4">
-            <a href="#about" class="block py-2 px-6 text-gray-600 hover:text-blue-600 transition border-b">About</a>
-            <a href="#projects" class="block py-2 px-6 text-gray-600 hover:text-blue-600 transition border-b">Projects</a>
-            <a href="#events" class="block py-2 px-6 text-gray-600 hover:text-blue-600 transition border-b">Events</a>
-            <a href="#publications" class="block py-2 px-6 text-gray-600 hover:text-blue-600 transition border-b">Publications</a>
-            <a href="#interviews" class="block py-2 px-6 text-gray-600 hover:text-blue-600 transition border-b">Press</a>
-            <a href="#contact" class="block py-2 px-6 text-gray-600 hover:text-blue-600 transition">Contact</a>
-        </nav>
     </header>
 
+    <!-- Mobile Drawer -->
+    <div class="mobile-backdrop" id="mobile-backdrop"></div>
+    <nav class="mobile-drawer" id="mobile-drawer" aria-label="Mobile navigation">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#events">Events</a>
+        <a href="#publications">Publications</a>
+        <a href="#press">Press</a>
+        <a href="#breathe">Breathe</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
     <main>
-        <section id="home" class="relative text-white pt-24 pb-32">
-            <div class="absolute inset-0">
+        <!-- Hero -->
+        <section class="hero" id="home">
+            <div class="hero-bg">
                 <img 
-                    src="https://images.unsplash.com/photo-1562474541-07ed748b1d46?q=80&w=1632&auto=format&fit=crop" 
+                    src="https://images.unsplash.com/photo-1562474541-07ed748b1d46?q=80&w=1632&auto=format&fit=crop"
                     srcset="https://images.unsplash.com/photo-1562474541-07ed748b1d46?q=80&w=768&auto=format&fit=crop 768w, https://images.unsplash.com/photo-1562474541-07ed748b1d46?q=80&w=1632&auto=format&fit=crop 1632w"
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                    alt="Panoramic view of the Singapore skyline at sunset" 
-                    class="w-full h-full object-cover" 
-                    loading="eager">
-                <div class="absolute inset-0 bg-gray-900 opacity-60"></div>
+                    sizes="100vw"
+                    alt="Panoramic view of the Singapore skyline at sunset"
+                    decoding="async" fetchpriority="high">
             </div>
-            
-            <div class="relative container mx-auto px-6 flex flex-col md:flex-row items-center">
-                <div class="md:w-2/3 text-center md:text-left">
-                    <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-4 fade-in-up">Research Scientist</h1>
-                    <p class="text-lg md:text-xl text-gray-200 max-w-2xl mb-6 fade-in-up delay-1">
-                        Advancing mental health through rigorous, open, and equitable science, with a focus on non-pharmacological interventions for stress, mood, and sleep.
-                    </p>
-                    <div class="mb-8 fade-in-up delay-2">
-                        <span class="text-sm text-gray-300 uppercase tracking-wider">Featured In:</span>
-                        <a href="https://www.nature.com/nathumbehav/volumes/8/issues/9" target="_blank" class="font-semibold text-white italic hover:underline ml-2">Nature Human Behaviour</a>
-                    </div>
-                    <a href="#contact" class="bg-blue-600 text-white font-semibold py-3 px-8 rounded-lg shadow-lg hover:bg-blue-700 transition transform hover:scale-105 fade-in-up delay-3">Get in Touch</a>
+            <!-- Subtle bubbles (scuba-diving nod / underwater calm) -->
+            <div class="bubbles" aria-hidden="true" id="bubbles-container"></div>
+            <div class="hero-content">
+                <div class="hero-text">
+                    <p class="overline">A*STAR · Singapore</p>
+                    <h1>Research Scientist</h1>
+                    <p>Advancing mental health through rigorous, open, and equitable science — with a focus on non-pharmacological interventions for stress, mood, and sleep.</p>
+                    <p class="featured">Featured in: <a href="https://www.nature.com/nathumbehav/volumes/8/issues/9" target="_blank" rel="noopener">Nature Human Behaviour</a></p>
+                    <a href="#contact" class="hero-cta">Get in Touch <i class="fas fa-arrow-right"></i></a>
                 </div>
-                <div class="md:w-1/3 mt-10 md:mt-0 flex justify-center fade-in-up delay-1">
-                    <img src="profile.png" 
-                             alt="Professional headshot of Alessandro Sparacio" 
-                             class="rounded-full shadow-2xl w-64 h-64 md:w-80 md:h-80 object-cover border-4 border-white/50" 
-                             loading="lazy">
-                </div>
-                </div>
-        </section>
-
-        <section id="about" class="py-20 bg-gray-50">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">About Me</h2>
-                </div>
-                
-                <div class="max-w-4xl mx-auto">
-                    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12 text-center">
-                        <div class="bg-white p-6 rounded-lg shadow-md">
-                            <i class="fas fa-brain text-3xl text-blue-600 mb-3"></i>
-                            <h3 class="font-semibold text-gray-800">Mental Health & Cognition</h3>
-                        </div>
-                        <div class="bg-white p-6 rounded-lg shadow-md">
-                            <i class="fas fa-vial-circle-check text-3xl text-blue-600 mb-3"></i>
-                            <h3 class="font-semibold text-gray-800">Clinical Trials</h3>
-                        </div>
-                        <div class="bg-white p-6 rounded-lg shadow-md">
-                            <i class="fas fa-heart-pulse text-3xl text-blue-600 mb-3"></i>
-                            <h3 class="font-semibold text-gray-800">Digital Biomarkers</h3>
-                        </div>
-                        <div class="bg-white p-6 rounded-lg shadow-md">
-                            <i class="fas fa-spa text-3xl text-blue-600 mb-3"></i>
-                            <h3 class="font-semibold text-gray-800">Mindfulness</h3>
-                        </div>
-                    </div>
-
-                    <article class="bg-white p-8 rounded-xl shadow-md space-y-4">
-                        <p class="text-gray-700 text-lg leading-relaxed">As a Research Scientist at A*STAR, I am dedicated to advancing mental health research, with a focus on cognition, mood, and stress.</p>
-                        
-                        <blockquote class="bg-blue-50 border-l-4 border-blue-500 p-4 my-4 rounded-r-lg">
-                            <p class="text-gray-700 text-lg leading-relaxed italic">A cornerstone of my career has been leading a large-scale project on self-administered mindfulness. Our findings, published in <span class="font-semibold not-italic text-gray-900">Nature Human Behaviour</span>, demonstrated that mindfulness significantly reduces stress.</p>
-                        </blockquote>
-                        
-                        <p class="text-gray-700 text-lg leading-relaxed">This work has led to opportunities like being a Keynote Speaker at the 4th Annual International Conference of Thai Clinical Psychologists and an invitation to present at the Global Young Scientists Summit (GYSS) 2025.</p>
-                        <p class="text-gray-700 text-lg leading-relaxed">My doctoral research at Université Grenoble Alpes and Swansea University involved two comprehensive meta-analyses, identifying critical gaps that my multi-site study aimed to address. Since joining A*STAR, I have expanded my expertise into clinical trials and digital biomarkers, leading a decentralized pilot trial using Heart Rate Variability (HRV) to measure stress.</p>
-                        <p class="text-gray-700 text-lg leading-relaxed">I earned my Ph.D. with distinction for excellence in work and exemplary Open Science practices, building upon a Master's in Social and Occupational Psychology.</p>
-                    </article>
+                <div class="hero-portrait">
+                    <img src="profile.png" alt="Professional headshot of Alessandro Sparacio" decoding="async" fetchpriority="high">
                 </div>
             </div>
         </section>
 
-        <section id="projects" class="py-20 bg-blue-50">
-            <div class="container mx-auto px-6">
-                <div class="max-w-4xl mx-auto">
-                    <div class="text-center mb-12">
-                        <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Featured Project</h2>
+        <!-- About -->
+        <section id="about" class="alt-bg">
+            <div class="section-inner">
+                <h2 class="section-title reveal">About Me</h2>
+                <div class="about-pillars">
+                    <div class="glass-card pillar reveal reveal-delay-1">
+                        <i class="fas fa-brain"></i>
+                        <h3>Mental Health & Cognition</h3>
                     </div>
-
-                    <article class="bg-white p-8 rounded-lg shadow-lg flex flex-col md:flex-row gap-8 mb-10">
-                        <div class="md:w-1/3 flex-shrink-0">
-                            <img src="recruit.png" alt="Recruitment graphic for mindfulness research study" class="rounded-lg w-full">
-                        </div>
-                        <div class="md:w-2/3">
-                            <div class="flex justify-between items-start mb-2">
-                                <h3 class="text-2xl font-semibold text-gray-900">Building Resilience Across Socioeconomic Contexts</h3>
-                                <span class="badge bg-blue-100 text-blue-800 flex-shrink-0 ml-4 mt-1">In Progress</span>
-                            </div>
-                            <p class="text-gray-700 text-lg leading-relaxed mb-6">As Principal Investigator on this NMRC-funded study, I am testing different mindfulness training structures to discover the optimal way to reduce stress. A key goal is to ensure health equity by recruiting a diverse, international sample.</p>
-                             <a href="https://osf.io/7mnqd" target="_blank" class="bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg shadow-lg hover:bg-blue-700 transition transform hover:scale-105 inline-block">Learn More on OSF</a>
-                        </div>
-                    </article>
+                    <div class="glass-card pillar reveal reveal-delay-2">
+                        <i class="fas fa-vial-circle-check"></i>
+                        <h3>Clinical Trials</h3>
+                    </div>
+                    <div class="glass-card pillar reveal reveal-delay-3">
+                        <i class="fas fa-heart-pulse"></i>
+                        <h3>Digital Biomarkers</h3>
+                    </div>
+                    <div class="glass-card pillar reveal reveal-delay-4">
+                        <i class="fas fa-spa"></i>
+                        <h3>Mindfulness</h3>
+                    </div>
                 </div>
+                <article class="glass-card about-prose reveal">
+                    <p>As a Research Scientist at A*STAR, I am dedicated to advancing mental health research, with a focus on cognition, mood, and stress.</p>
+                    <div class="highlight-quote">
+                        <p>A cornerstone of my career has been leading a large-scale project on self-administered mindfulness. Our findings, published in <span>Nature Human Behaviour</span>, demonstrated that mindfulness significantly reduces stress.</p>
+                    </div>
+                    <p>This work has led to opportunities like being a Keynote Speaker at the 4th Annual International Conference of Thai Clinical Psychologists and an invitation to present at the Global Young Scientists Summit (GYSS) 2025.</p>
+                    <p>My doctoral research at Université Grenoble Alpes and Swansea University involved two comprehensive meta-analyses, identifying critical gaps that my multi-site study aimed to address. Since joining A*STAR, I have expanded my expertise into clinical trials and digital biomarkers, leading a decentralized pilot trial using Heart Rate Variability (HRV) to measure stress.</p>
+                    <p>I earned my Ph.D. with distinction for excellence in work and exemplary Open Science practices, building upon a Master's in Social and Occupational Psychology.</p>
+                </article>
             </div>
         </section>
 
-        <section id="presentation" class="py-20 bg-white">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Featured Presentation</h2>
-                    <p class="text-gray-600 mt-2">My "Quickfire Pitch" at the Global Young Scientists Summit (GYSS) 2025.</p>
-                </div>
-                <div class="max-w-4xl mx-auto shadow-2xl">
+        <!-- Projects -->
+        <section id="projects">
+            <div class="section-inner">
+                <h2 class="section-title reveal">Featured Project</h2>
+                <div class="section-subtitle reveal">Current research initiatives in mindfulness science.</div>
+                <article class="glass-card project-card reveal">
+                    <img src="recruit.png" alt="Recruitment graphic for mindfulness research study" decoding="async" loading="lazy">
+                    <div class="project-body">
+                        <div class="badge-row">
+                            <span class="badge">NMRC-Funded</span>
+                            <span class="badge status">In Progress</span>
+                        </div>
+                        <h3>Building Resilience Across Socioeconomic Contexts</h3>
+                        <p>As Principal Investigator on this NMRC-funded study, I am testing different mindfulness training structures to discover the optimal way to reduce stress. A key goal is to ensure health equity by recruiting a diverse, international sample.</p>
+                        <div>
+                            <a href="https://osf.io/7mnqd" target="_blank" rel="noopener" class="btn">Learn More on OSF <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Presentation -->
+        <section id="presentation" class="alt-bg">
+            <div class="section-inner">
+                <h2 class="section-title reveal">Featured Presentation</h2>
+                <div class="section-subtitle reveal">My "Quickfire Pitch" at the Global Young Scientists Summit (GYSS) 2025.</div>
+                <div class="video-wrap reveal">
                     <div class="video-container">
-                        <iframe src="https://www.youtube.com/embed/C2iK7nwVskc" title="YouTube video player showcasing a presentation by Alessandro Sparacio" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe src="https://www.youtube.com/embed/C2iK7nwVskc" title="Quickfire Pitch at GYSS 2025 by Alessandro Sparacio" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
                     </div>
                 </div>
             </div>
         </section>
-        
-<section id="events" class="py-20 bg-gray-50">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Events</h2>
+
+        <!-- Events -->
+        <section id="events">
+            <div class="section-inner">
+                <h2 class="section-title reveal">Events</h2>
+
+                <h3 class="sub-heading reveal">Upcoming</h3>
+                <div class="events-grid" style="max-width:480px;margin:0 auto 3rem;">
+                    <article class="glass-card event-card reveal" style="border:2px solid var(--c-accent);">
+                        <img src="cattolica.jpg" alt="Seminar at Università Cattolica - Milano" decoding="async" loading="lazy">
+                        <div class="event-body">
+                            <span class="event-label upcoming">Upcoming</span>
+                            <h3>Advancing Mindfulness Research: Open Tools, Multi-site Designs, and Methodological Rigor</h3>
+                            <div class="event-meta"><i class="fa-solid fa-calendar-days"></i> 26 May 2026</div>
+                            <div class="event-meta"><i class="fa-solid fa-clock"></i> 14:30 – 16:30 CET</div>
+                            <div class="event-meta"><i class="fa-solid fa-map-marker-alt"></i> Largo A. Gemelli, 1 – Aula G.001 Bontadini</div>
+                            <p style="font-style:italic;font-size:0.82rem;">Building on evidence in Nature Human Behaviour, this talk introduces a new RCT involving 20+ global sites, integrating HRV biomarkers and prioritizing health equity across diverse populations.</p>
+                            <div class="reading-list">
+                                <p>Background Reading</p>
+                                <a href="https://www.nature.com/articles/s41562-024-01907-7" target="_blank" rel="noopener"><i class="fa-solid fa-file-lines"></i> Nature Human Behaviour (2024): Brief mindfulness reduces stress</a>
+                                <a href="https://mental.jmir.org/2025//e77793/" target="_blank" rel="noopener"><i class="fa-solid fa-file-lines"></i> JMIR Mental Health (2025): Smartphone-Delivered Intervention Pilot</a>
+                            </div>
+                            <div class="event-btn">
+                                <a href="https://docs.google.com/forms/d/e/1FAIpQLSek7k3SEGKCH2eVG-ccBDxbv1xk9Z_gkCLqzuhzoswzs5H1UQ/viewform?usp=dialog" target="_blank" rel="noopener" class="live">Register Now</a>
+                            </div>
+                        </div>
+                    </article>
                 </div>
 
-                <div class="max-w-4xl mx-auto">
-                    <h3 class="text-2xl font-bold text-gray-800 mb-8 text-center">Upcoming</h3>
-                    <div class="max-w-lg mx-auto">
-                        <article class="bg-white rounded-xl shadow-md overflow-hidden flex flex-col border-2 border-blue-100 transition-shadow duration-300 hover:shadow-xl">
-                            <img src="cattolica.jpg" alt="Seminar at Università Cattolica - Milano" class="w-full h-48 object-cover crisp-image" loading="lazy">
-                            <div class="p-6 flex flex-col flex-grow">
-                                <h3 class="text-xl font-semibold text-gray-900 leading-tight">Advancing Mindfulness Research: Open Tools, Multi-site Designs, and Methodological Rigor</h3>
-                                <div class="text-sm font-medium text-gray-600 mt-3 space-y-2">
-                                    <div class="flex items-center">
-                                        <i class="fa-solid fa-calendar-days w-4 mr-2 text-blue-500"></i>
-                                        <span><strong>Date:</strong> 26 May 2026</span>
-                                    </div>
-                                    <div class="flex items-center">
-                                        <i class="fa-solid fa-clock w-4 mr-2 text-blue-500"></i>
-                                        <span><strong>Time:</strong> 14:30 - 16:30 (CET)</span>
-                                    </div>
-                                    <div class="flex items-center">
-                                        <i class="fa-solid fa-map-marker-alt w-4 mr-2 text-blue-500"></i>
-                                        <span><strong>Location:</strong> Largo A. Gemelli, 1 - Aula G.001 Bontadini (Edificio Dominicanum)</span>
-                                    </div>
-                                </div>
-                                <p class="text-gray-600 mt-4 text-xs leading-relaxed italic border-t pt-4">
-                                    Building on evidence in Nature Human Behaviour, this talk (conducted in English) introduces a new RCT involving 20+ global sites, integrating HRV biomarkers and prioritizing health equity across diverse populations.
-                                </p>
-                                
-                                <div class="mt-4 border-t pt-4">
-                                    <p class="text-[10px] font-bold text-gray-900 uppercase tracking-wider mb-2">Background Reading:</p>
-                                    <ul class="text-[11px] text-blue-600 space-y-2">
-                                        <li>
-                                            <a href="https://www.nature.com/articles/s41562-024-01907-7" target="_blank" class="hover:underline flex items-start">
-                                                <i class="fa-solid fa-file-lines mt-0.5 mr-2 text-gray-400"></i>
-                                                <span>Nature Human Behaviour (2024): Brief mindfulness reduces stress</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="https://mental.jmir.org/2025//e77793/" target="_blank" class="hover:underline flex items-start">
-                                                <i class="fa-solid fa-file-lines mt-0.5 mr-2 text-gray-400"></i>
-                                                <span>JMIR Mental Health (2025): Smartphone-Delivered Intervention Pilot</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
+                <h3 class="sub-heading reveal">Past</h3>
+                <div class="events-grid" style="max-width:480px;margin:0 auto;">
+                    <article class="glass-card event-card reveal">
+                        <img src="event_nus.png" alt="Workshop poster for the Replication Crisis in Science" decoding="async" loading="lazy">
+                        <div class="event-body">
+                            <span class="event-label past">Past</span>
+                            <h3>Workshop – The Replication Crisis in Science and Medicine</h3>
+                            <div class="event-meta"><i class="fa-solid fa-calendar-days"></i> 2 October 2025</div>
+                            <div class="event-meta"><i class="fa-solid fa-clock"></i> 2–5pm SGT</div>
+                            <div class="event-meta"><i class="fa-solid fa-map-marker-alt"></i> Singapore</div>
+                            <p>A workshop at NUS Medicine discussing the challenges of the replication crisis and how embracing reproducibility can strengthen scientific progress in Singapore.</p>
+                            <div class="event-btn"><a href="https://medicine.nus.edu.sg/cbme/replication-crisis-workshop/" target="_blank" rel="noopener" class="ended">Event Ended</a></div>
+                        </div>
+                    </article>
+                    <article class="glass-card event-card reveal">
+                        <img src="event_mindfulness.png" alt="Poster for the Manchester Mindfulness Festival" decoding="async" loading="lazy">
+                        <div class="event-body">
+                            <span class="event-label past">Past</span>
+                            <h3>Brief Mindfulness for Real-Life Stress Relief: Evidence from a Multi-Site Study</h3>
+                            <div class="event-meta"><i class="fa-solid fa-calendar-days"></i> 30 August 2025</div>
+                            <div class="event-meta"><i class="fa-solid fa-clock"></i> 10–11am UK</div>
+                            <div class="event-meta"><i class="fa-solid fa-globe"></i> Online</div>
+                            <p>A talk at The Manchester Mindfulness Festival exploring findings from a large-scale study on the practical applications of brief mindfulness exercises.</p>
+                            <div class="event-btn"><a href="https://www.manchestermindfulnessfestival.com/onlineevents" target="_blank" rel="noopener" class="ended">Event Ended</a></div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
 
-                                <a href="https://docs.google.com/forms/d/e/1FAIpQLSek7k3SEGKCH2eVG-ccBDxbv1xk9Z_gkCLqzuhzoswzs5H1UQ/viewform?usp=dialog" target="_blank" class="mt-5 bg-blue-600 text-white text-center font-semibold py-2 px-4 rounded-lg hover:bg-blue-700 transition">Register Now</a>
+        <!-- Publications -->
+        <section id="publications" class="alt-bg">
+            <div class="section-inner">
+                <h2 class="section-title reveal">Featured Publications</h2>
+                <div class="pub-filter reveal" role="group" aria-label="Filter publications">
+                    <button class="active" data-filter="all">All</button>
+                    <button data-filter="nhb">Nature Human Behaviour</button>
+                    <button data-filter="jmir">JMIR Mental Health</button>
+                    <button data-filter="collabra">Collabra</button>
+                </div>
+                <div class="pub-list">
+                    <article class="glass-card pub-card reveal" data-journal="jmir" data-year="2025">
+                        <img src="jmir.png" alt="Graphical abstract for JMIR publication" decoding="async" loading="lazy">
+                        <div class="pub-body">
+                            <div class="badge-row">
+                                <span class="badge">JMIR Mental Health</span>
+                                <span class="badge">2025</span>
+                                <span class="badge">Pilot RCT</span>
                             </div>
-                        </article>
+                            <h3>Feasibility of a Smartphone-Delivered Mindfulness Intervention</h3>
+                            <p class="pub-gist-label">The Gist:</p>
+                            <p>Is it the mindfulness, or is it just the placebo effect? This study used a sham control to see what's really behind the stress-reducing benefits of digital wellness apps.</p>
+                            <a href="https://mental.jmir.org/2025/1/e77793" target="_blank" rel="noopener" class="pub-link">View Publication →</a>
+                        </div>
+                    </article>
+                    <article class="glass-card pub-card reveal" data-journal="nhb" data-year="2024">
+                        <img src="nature2.png" alt="Graphical abstract for Nature Human Behaviour publication" decoding="async" loading="lazy">
+                        <div class="pub-body">
+                            <div class="badge-row">
+                                <span class="badge">Nature Human Behaviour</span>
+                                <span class="badge">2024</span>
+                                <span class="badge">Multi-Site Study</span>
+                            </div>
+                            <h3>Self-administered mindfulness interventions reduce stress</h3>
+                            <p class="pub-gist-label">The Gist:</p>
+                            <p>Mindfulness apps are everywhere, but do they actually work for stress? We tested four common exercises on over 2,200 people to find out.</p>
+                            <a href="https://doi.org/10.1038/s41562-024-01907-7" target="_blank" rel="noopener" class="pub-link">View Publication →</a>
+                        </div>
+                    </article>
+                    <article class="glass-card pub-card reveal" data-journal="collabra" data-year="2023">
+                        <img src="meta.png" alt="Graphical abstract for Collabra: Psychology publication" decoding="async" loading="lazy">
+                        <div class="pub-body">
+                            <div class="badge-row">
+                                <span class="badge">Collabra: Psychology</span>
+                                <span class="badge">2023</span>
+                                <span class="badge">Meta-Analysis</span>
+                            </div>
+                            <h3>Stress regulation via being in nature and social support</h3>
+                            <p class="pub-gist-label">The Gist:</p>
+                            <p>Which is a more reliable stress buster: a walk in the park or a talk with a friend? Our meta-analysis of the scientific literature revealed a clear winner.</p>
+                            <a href="https://online.ucpress.edu/collabra/article/9/1/77343/196335" target="_blank" rel="noopener" class="pub-link">View Publication →</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Press -->
+        <section id="press">
+            <div class="section-inner">
+                <h2 class="section-title reveal">Interviews &amp; Press</h2>
+                <div class="press-list">
+                    <article class="glass-card press-card reveal">
+                        <div class="press-logo"><img src="astar.png" alt="A*STAR Research Logo" decoding="async" loading="lazy"></div>
+                        <div class="press-text">
+                            <p>A feature in A*STAR Research detailing our large-scale, multi-site study that explored the effectiveness of brief, self-administered mindfulness exercises for stress reduction.</p>
+                            <a href="https://research.a-star.edu.sg/articles/highlights/beating-stress-with-mindfulness/" target="_blank" rel="noopener">Read Article →</a>
+                        </div>
+                    </article>
+                    <article class="glass-card press-card reveal">
+                        <div class="press-logo"><img src="rep.png" alt="La Repubblica Logo" decoding="async" loading="lazy"></div>
+                        <div class="press-text">
+                            <p>An interview discussing the findings of our multi-site study on the effectiveness of mindfulness for stress reduction.</p>
+                            <a href="https://www.repubblica.it/venerdi/2024/07/29/news/mindfulness_ansia_stress_esercizi-423419156/" target="_blank" rel="noopener">Read Article →</a>
+                        </div>
+                    </article>
+                    <article class="glass-card press-card reveal">
+                        <div class="press-logo"><img src="medxpress.png" alt="Medical Xpress Logo" decoding="async" loading="lazy"></div>
+                        <div class="press-text">
+                            <p>A discussion about our research on self-administered mindfulness interventions and their impact on stress.</p>
+                            <a href="https://medicalxpress.com/news/2024-06-large-scale-short-term-impact.html" target="_blank" rel="noopener">Read Article →</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- 60-Second Stress Reset: Breathing Pacer -->
+        <section id="breathe" class="alt-bg pacer-section">
+            <div class="section-inner">
+                <h2 class="section-title reveal">60-Second Stress Reset</h2>
+                <div class="section-subtitle reveal">Experience the science first-hand. Choose a technique and follow the pacer.</div>
+                <div class="glass-card pacer-widget reveal">
+                    <div class="pacer-circle-wrap">
+                        <svg class="pacer-progress" width="220" height="220" viewBox="0 0 220 220">
+                            <circle cx="110" cy="110" r="100" fill="none" stroke="var(--c-border)" stroke-width="3"/>
+                            <circle id="pacer-arc" cx="110" cy="110" r="100" fill="none" stroke="var(--c-accent)" stroke-width="3" stroke-linecap="round"
+                                stroke-dasharray="628.32" stroke-dashoffset="628.32"
+                                transform="rotate(-90 110 110)"
+                                style="transition: stroke-dashoffset 0.5s linear;"/>
+                        </svg>
+                        <div class="pacer-ring" style="position:absolute;inset:0;">
+                            <div class="pacer-dot" id="pacer-dot"></div>
+                        </div>
+                    </div>
+                    <div class="pacer-instruction" id="pacer-instruction">Press Start</div>
+                    <div class="pacer-timer" id="pacer-timer">0:00</div>
+                    <div class="pacer-controls">
+                        <select id="pacer-technique" aria-label="Breathing technique">
+                            <option value="box">Box Breathing (4-4-4-4)</option>
+                            <option value="478">4-7-8 Technique</option>
+                        </select>
+                        <button class="btn" id="pacer-start">Start</button>
+                        <button class="btn btn-outline" id="pacer-stop" style="display:none;">Stop</button>
                     </div>
                 </div>
-
-                <div class="max-w-4xl mx-auto mt-20">
-                    <h3 class="text-2xl font-bold text-gray-800 mb-8 text-center">Past</h3>
-                      <div class="max-w-lg mx-auto space-y-8">
-
-                        <article class="bg-white rounded-xl shadow-md overflow-hidden flex flex-col">
-                            <img src="event_nus.png" alt="Workshop poster for the Replication Crisis in Science" class="w-full h-48 object-cover" loading="lazy">
-                            <div class="p-6 flex flex-col flex-grow">
-                                <h3 class="text-xl font-semibold text-gray-900">Workshop - The Replication Crisis in Science and Medicine</h3>
-                                <div class="text-sm font-medium text-gray-600 mt-2 space-y-2">
-                                    <div class="flex items-center">
-                                        <i class="fa-solid fa-calendar-days w-4 mr-2 text-gray-500"></i>
-                                        <span><strong>Date:</strong> 2 October 2025</span>
-                                    </div>
-                                    <div class="flex items-center">
-                                        <i class="fa-solid fa-clock w-4 mr-2 text-gray-500"></i>
-                                        <span><strong>Time:</strong> 2-5pm, Singapore</span>
-                                    </div>
-                                    <div class="flex items-center">
-                                        <i class="fa-solid fa-map-marker-alt w-4 mr-2 text-gray-500"></i>
-                                        <span><strong>Location:</strong> Singapore</span>
-                                    </div>
-                                </div>
-                                <p class="text-gray-600 mt-4 flex-grow">A workshop at NUS Medicine discussing the challenges of the replication crisis and how embracing reproducibility can strengthen scientific progress in Singapore.</p>
-                                <a href="https://medicine.nus.edu.sg/cbme/replication-crisis-workshop/" target="_blank" class="mt-4 bg-gray-400 text-white text-center font-semibold py-2 px-4 rounded-lg cursor-not-allowed" aria-disabled="true">Event Ended</a>
-                            </div>
-                        </article>
-                        <article class="bg-white rounded-xl shadow-md overflow-hidden flex flex-col">
-                            <img src="event_mindfulness.png" alt="Poster for the Manchester Mindfulness Festival" class="w-full h-48 object-cover" loading="lazy">
-                            <div class="p-6 flex flex-col flex-grow">
-                                <h3 class="text-xl font-semibold text-gray-900">Brief Mindfulness for Real-Life Stress Relief: Evidence from a Multi-Site Study </h3>
-                                <div class="text-sm font-medium text-gray-600 mt-2 space-y-2">
-                                    <div class="flex items-center">
-                                        <i class="fa-solid fa-calendar-days w-4 mr-2 text-gray-500"></i>
-                                        <span><strong>Date:</strong> 30 August 2025</span>
-                                    </div>
-                                    <div class="flex items-center">
-                                        <i class="fa-solid fa-clock w-4 mr-2 text-gray-500"></i>
-                                        <span><strong>Time:</strong> 10-11am, UK</span>
-                                    </div>
-                                    <div class="flex items-center">
-                                        <i class="fa-solid fa-globe w-4 mr-2 text-gray-500"></i>
-                                        <span><strong>Location:</strong> Online </span>
-                                    </div>
-                                </div>
-                                <p class="text-gray-600 mt-4 flex-grow">A talk at The Manchester Mindfulness Festival exploring findings from a large-scale study on the practical applications of brief mindfulness exercises. </p>
-                                <a href="https://www.manchestermindfulnessfestival.com/onlineevents" target="_blank" class="mt-4 bg-gray-400 text-white text-center font-semibold py-2 px-4 rounded-lg cursor-not-allowed" aria-disabled="true">Event Ended</a>
-                            </div>
-                        </article>
-                    </div>
-                </div>
             </div>
         </section>
-        <section id="publications" class="py-20 bg-white">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Featured Publications</h2>
-                </div>
-                <div class="max-w-4xl mx-auto space-y-8">
-                    <article class="bg-gray-50 p-6 rounded-lg border border-gray-200 shadow-sm flex flex-col sm:flex-row gap-6">
-                        <div class="sm:w-1/3 flex-shrink-0 publication-image-container">
-                            <img src="jmir.png" alt="Graphical abstract for JMIR publication" class="rounded-lg">
-                        </div>
-                        <div class="sm:w-2/3">
-                            <div class="flex space-x-2 mb-2">
-                                <span class="badge bg-blue-100 text-blue-800">JMIR Mental Health</span>
-                                <span class="badge bg-green-100 text-green-800">Pilot RCT</span>
-                            </div>
-                            <h3 class="text-xl font-semibold text-gray-900">Feasibility of a Smartphone-Delivered Mindfulness Intervention</h3>
-                            <p class="font-semibold mt-3 text-gray-800">The Gist:</p>
-                            <p class="text-gray-600 text-base">Is it the mindfulness, or is it just the placebo effect? This study used a sham control to see what's really behind the stress-reducing benefits of digital wellness apps.</p>
-                            <div class="mt-4 flex flex-wrap gap-x-4 gap-y-2 font-semibold text-sm">
-                                <a href="https://mental.jmir.org/2025/1/e77793" target="_blank" class="text-blue-600 hover:underline">View Publication →</a>
-                            </div>
-                        </div>
-                    </article>
-                    
-                    <article class="bg-gray-50 p-6 rounded-lg border border-gray-200 shadow-sm flex flex-col sm:flex-row gap-6">
-                        <div class="sm:w-1/3 flex-shrink-0 publication-image-container">
-                            <img src="nature2.png" alt="Graphical abstract for Nature Human Behaviour publication" class="rounded-lg">
-                        </div>
-                        <div class="sm:w-2/3">
-                            <div class="flex space-x-2 mb-2">
-                                <span class="badge bg-blue-100 text-blue-800">Nature Human Behaviour</span>
-                                <span class="badge bg-green-100 text-green-800">Multi-Site Study</span>
-                            </div>
-                            <h3 class="text-xl font-semibold text-gray-900">Self-administered mindfulness interventions reduce stress</h3>
-                            <p class="font-semibold mt-3 text-gray-800">The Gist:</p>
-                            <p class="text-gray-600 text-base">Mindfulness apps are everywhere, but do they actually work for stress? We tested four common exercises on over 2,200 people to find out.</p>
-                            <div class="mt-4 flex flex-wrap gap-x-4 gap-y-2 font-semibold text-sm">
-                                <a href="https://doi.org/10.1038/s41562-024-01907-7" target="_blank" class="text-blue-600 hover:underline">View Publication →</a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="bg-gray-50 p-6 rounded-lg border border-gray-200 shadow-sm flex flex-col sm:flex-row gap-6">
-                        <div class="sm:w-1/3 flex-shrink-0 publication-image-container">
-                            <img src="meta.png" alt="Graphical abstract for Collabra: Psychology publication" class="rounded-lg">
-                        </div>
-                        <div class="sm:w-2/3">
-                           <div class="flex space-x-2 mb-2">
-                                <span class="badge bg-blue-100 text-blue-800">Collabra: Psychology</span>
-                                <span class="badge bg-green-100 text-green-800">Meta-Analysis</span>
-                            </div>
-                            <h3 class="text-xl font-semibold text-gray-900">Stress regulation via being in nature and social support</h3>
-                            <p class="font-semibold mt-3 text-gray-800">The Gist:</p>
-                            <p class="text-gray-600 text-base">Which is a more reliable stress buster: a walk in the park or a talk with a friend? Our meta-analysis of the scientific literature revealed a clear winner.</p>
-                            <div class="mt-4 flex flex-wrap gap-x-4 gap-y-2 font-semibold text-sm">
-                                <a href="https://online.ucpress.edu/collabra/article/9/1/77343/196335" target="_blank" class="text-blue-600 hover:underline">View Publication →</a>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section id="interviews" class="py-20 bg-gray-50">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Interviews & Press</h2>
-                </div>
-                <div class="max-w-4xl mx-auto space-y-8">
-                    <article class="bg-white p-6 rounded-lg border border-gray-200 shadow-sm flex flex-col sm:flex-row items-center gap-6 sm:gap-8">
-                        <div class="flex-shrink-0 w-48 sm:w-1/3 h-20 flex items-center justify-center">
-                            <img src="astar.png" alt="A*STAR Research Logo" class="max-w-full max-h-full">
-                        </div>
-                        <div class="text-center sm:text-left">
-                           <p class="text-gray-600">A feature in A*STAR Research detailing our large-scale, multi-site study that explored the effectiveness of brief, self-administered mindfulness exercises for stress reduction.</p>
-                            <a href="https://research.a-star.edu.sg/articles/highlights/beating-stress-with-mindfulness/" target="_blank" class="text-blue-600 hover:underline mt-2 inline-block font-semibold">Read Article →</a>
-                        </div>
-                    </article>
-                    <article class="bg-white p-6 rounded-lg border border-gray-200 shadow-sm flex flex-col sm:flex-row items-center gap-6 sm:gap-8">
-                        <div class="flex-shrink-0 w-48 sm:w-1/3 h-20 flex items-center justify-center">
-                            <img src="rep.png" alt="La Repubblica Logo" class="max-w-full max-h-full">
-                        </div>
-                        <div class="text-center sm:text-left">
-                             <p class="text-gray-600">An interview discussing the findings of our multi-site study on the effectiveness of mindfulness for stress reduction.</p>
-                            <a href="https://www.repubblica.it/venerdi/2024/07/29/news/mindfulness_ansia_stress_esercizi-423419156/" target="_blank" class="text-blue-600 hover:underline mt-2 inline-block font-semibold">Read Article →</a>
-                        </div>
-                    </article>
-                    <article class="bg-white p-6 rounded-lg border border-gray-200 shadow-sm flex flex-col sm:flex-row items-center gap-6 sm:gap-8">
-                         <div class="flex-shrink-0 w-48 sm:w-1/3 h-20 flex items-center justify-center">
-                            <img src="medxpress.png" alt="Medical Xpress Logo" class="max-w-full max-h-full">
-                        </div>
-                        <div class="text-center sm:text-left">
-                            <p class="text-gray-600">A discussion about our research on self-administered mindfulness interventions and their impact on stress.</p>
-                            <a href="https://medicalxpress.com/news/2024-06-large-scale-short-term-impact.html" target="_blank" class="text-blue-600 hover:underline mt-2 inline-block font-semibold">Read Article →</a>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-        
     </main>
 
-    <footer id="contact" class="bg-gray-900 text-white py-12">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-3xl font-bold mb-4">Contact</h2>
-            <p class="text-gray-400 mb-6">Feel free to reach out for collaborations or inquiries.</p>
-            <div class="mb-8">
-                <a href="mailto:Alessandro_Sparacio@a-star.edu.sg" class="bg-blue-600 text-white font-semibold py-3 px-4 sm:px-8 rounded-lg shadow-lg hover:bg-blue-700 transition break-all">
-                    Alessandro_Sparacio@a-star.edu.sg
-                </a>
-            </div>
-            <div class="flex justify-center space-x-6 text-2xl">
-                <a href="https://x.com/asparacio992" target="_blank" class="text-gray-400 hover:text-white transition" aria-label="X (formerly Twitter)"><i class="fab fa-x-twitter"></i></a>
-                <a href="https://www.linkedin.com/in/alessandro-sparacio/" target="_blank" class="text-gray-400 hover:text-white transition" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <a href="https://osf.io/tp7gm" target="_blank" class="text-gray-400 hover:text-white transition" aria-label="Open Science Framework"><i class="fas fa-flask"></i></a>
-                <a href="https://orcid.org/0009-0008-9818-3920" target="_blank" class="text-gray-400 hover:text-white transition" aria-label="ORCID"><i class="fab fa-orcid"></i></a>
-                <a href="https://www.researchgate.net/profile/Alessandro-Sparacio-3" target="_blank" class="text-gray-400 hover:text-white transition" aria-label="ResearchGate"><i class="fab fa-researchgate"></i></a>
-            </div>
+    <!-- Footer -->
+    <footer id="contact">
+        <h2>Contact</h2>
+        <p class="subtitle">Feel free to reach out for collaborations or inquiries.</p>
+        <a href="mailto:Alessandro_Sparacio@a-star.edu.sg" class="footer-email">
+            <i class="fas fa-envelope"></i> Alessandro_Sparacio@a-star.edu.sg
+        </a>
+        <div class="social-links">
+            <a href="https://x.com/asparacio992" target="_blank" rel="noopener" aria-label="X (formerly Twitter)"><i class="fab fa-x-twitter"></i></a>
+            <a href="https://www.linkedin.com/in/alessandro-sparacio/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://osf.io/tp7gm" target="_blank" rel="noopener" aria-label="Open Science Framework"><i class="fas fa-flask"></i></a>
+            <a href="https://orcid.org/0009-0008-9818-3920" target="_blank" rel="noopener" aria-label="ORCID"><i class="fab fa-orcid"></i></a>
+            <a href="https://www.researchgate.net/profile/Alessandro-Sparacio-3" target="_blank" rel="noopener" aria-label="ResearchGate"><i class="fab fa-researchgate"></i></a>
         </div>
+        <button class="easter-egg-btn" id="easter-egg-trigger">Feeling uninspired? ✦</button>
+        <p class="copyright">&copy; 2026 Alessandro Sparacio. All rights reserved.</p>
     </footer>
 
+    <!-- Easter Egg Popup -->
+    <div class="easter-popup" id="easter-popup">
+        <div class="easter-card">
+            <button class="easter-close" id="easter-close" aria-label="Close"><i class="fas fa-times"></i></button>
+            <div class="card-icon" id="egg-icon"></div>
+            <h3 id="egg-title"></h3>
+            <p id="egg-quote"></p>
+            <div class="source" id="egg-source"></div>
+        </div>
+    </div>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const mobileMenuButton = document.getElementById('mobile-menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
-            if (mobileMenuButton && mobileMenu) {
-                mobileMenuButton.addEventListener('click', () => {
-                    mobileMenu.classList.toggle('hidden');
-                    const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true' || false;
-                    mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
+    (function() {
+        'use strict';
+
+        /* ========================
+           Module: Theme
+        ======================== */
+        const Theme = {
+            key: 'as-theme',
+            toggle: document.getElementById('theme-toggle'),
+            init() {
+                const saved = localStorage.getItem(this.key);
+                if (saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                    document.documentElement.classList.add('dark');
+                }
+                this.updateIcon();
+                this.toggle.addEventListener('click', () => {
+                    document.documentElement.classList.toggle('dark');
+                    localStorage.setItem(this.key, document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+                    this.updateIcon();
                 });
-                mobileMenu.querySelectorAll('a').forEach(link => {
-                    link.addEventListener('click', () => {
-                        mobileMenu.classList.add('hidden');
-                        mobileMenuButton.setAttribute('aria-expanded', 'false');
+            },
+            updateIcon() {
+                const isDark = document.documentElement.classList.contains('dark');
+                this.toggle.innerHTML = isDark ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+            }
+        };
+
+        /* ========================
+           Module: MobileMenu
+        ======================== */
+        const MobileMenu = {
+            hamburger: document.getElementById('hamburger'),
+            drawer: document.getElementById('mobile-drawer'),
+            backdrop: document.getElementById('mobile-backdrop'),
+            init() {
+                const close = () => {
+                    this.hamburger.classList.remove('open');
+                    this.drawer.classList.remove('open');
+                    this.backdrop.classList.remove('open');
+                    this.hamburger.setAttribute('aria-expanded', 'false');
+                };
+                this.hamburger.addEventListener('click', () => {
+                    const isOpen = this.drawer.classList.toggle('open');
+                    this.hamburger.classList.toggle('open');
+                    this.backdrop.classList.toggle('open');
+                    this.hamburger.setAttribute('aria-expanded', isOpen);
+                });
+                this.backdrop.addEventListener('click', close);
+                this.drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', close));
+            }
+        };
+
+        /* ========================
+           Module: ScrollEffects
+        ======================== */
+        const ScrollEffects = {
+            header: document.getElementById('main-header'),
+            progress: document.getElementById('scroll-progress'),
+            backBtn: document.getElementById('back-to-top'),
+            navLinks: document.querySelectorAll('.desktop-nav .nav-link'),
+            sections: document.querySelectorAll('main > section[id]'),
+            init() {
+                window.addEventListener('scroll', () => this.onScroll(), { passive: true });
+                this.backBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+                // Active nav observer
+                const obs = new IntersectionObserver(entries => {
+                    entries.forEach(e => {
+                        if (e.isIntersecting) {
+                            this.navLinks.forEach(l => l.classList.remove('active'));
+                            const link = document.querySelector(`.desktop-nav a[href="#${e.target.id}"]`);
+                            if (link) link.classList.add('active');
+                        }
+                    });
+                }, { rootMargin: '-100px 0px -60% 0px', threshold: 0.05 });
+                this.sections.forEach(s => obs.observe(s));
+            },
+            onScroll() {
+                const y = window.scrollY;
+                // Header
+                this.header.classList.toggle('scrolled', y > 50);
+                // Progress bar
+                const max = document.documentElement.scrollHeight - window.innerHeight;
+                this.progress.style.width = max > 0 ? (y / max * 100) + '%' : '0%';
+                // Back to top
+                this.backBtn.classList.toggle('visible', y > 600);
+            }
+        };
+
+        /* ========================
+           Module: RevealAnimations
+        ======================== */
+        const Reveal = {
+            init() {
+                const obs = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(e => {
+                        if (e.isIntersecting) {
+                            e.target.classList.add('visible');
+                            observer.unobserve(e.target);
+                        }
+                    });
+                }, { threshold: 0.08, rootMargin: '0px 0px -8% 0px' });
+                document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+            }
+        };
+
+        /* ========================
+           Module: PubFilter
+        ======================== */
+        const PubFilter = {
+            buttons: document.querySelectorAll('.pub-filter button'),
+            cards: document.querySelectorAll('.pub-card'),
+            init() {
+                this.buttons.forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        this.buttons.forEach(b => b.classList.remove('active'));
+                        btn.classList.add('active');
+                        const filter = btn.dataset.filter;
+                        this.cards.forEach(card => {
+                            if (filter === 'all' || card.dataset.journal === filter) {
+                                card.classList.remove('hidden-pub');
+                            } else {
+                                card.classList.add('hidden-pub');
+                            }
+                        });
                     });
                 });
             }
-            const header = document.getElementById('main-header');
-            if (header) {
-                window.addEventListener('scroll', () => {
-                    if (window.scrollY > 50) {
-                        header.classList.add('header-scrolled');
-                    } else {
-                        header.classList.remove('header-scrolled');
-                    }
-                }, { passive: true });
+        };
+
+        /* ========================
+           Module: Bubbles (Hero)
+        ======================== */
+        const Bubbles = {
+            init() {
+                const container = document.getElementById('bubbles-container');
+                for (let i = 0; i < 12; i++) {
+                    const b = document.createElement('div');
+                    b.classList.add('bubble');
+                    const size = 6 + Math.random() * 18;
+                    b.style.width = size + 'px';
+                    b.style.height = size + 'px';
+                    b.style.left = Math.random() * 100 + '%';
+                    b.style.animationDuration = (8 + Math.random() * 14) + 's';
+                    b.style.animationDelay = Math.random() * 10 + 's';
+                    container.appendChild(b);
+                }
             }
-            const sections = document.querySelectorAll('main > section[id]');
-            const navLinks = document.querySelectorAll('#desktop-nav a.nav-link');
-            const observerOptions = { root: null, rootMargin: '-100px 0px -60% 0px', threshold: 0.05 }; 
-            const observer = new IntersectionObserver(entries => {
-                entries.forEach(entry => {
-                    const id = entry.target.getAttribute('id');
-                    const targetLink = document.querySelector(`#desktop-nav a.nav-link[href="#${id}"]`);
-                    if (entry.isIntersecting) {
-                        navLinks.forEach(link => link.classList.remove('active'));
-                        if (targetLink) {
-                            targetLink.classList.add('active');
-                        }
+        };
+
+        /* ========================
+           Module: Breathing Pacer
+        ======================== */
+        const Pacer = {
+            dot: document.getElementById('pacer-dot'),
+            arc: document.getElementById('pacer-arc'),
+            instruction: document.getElementById('pacer-instruction'),
+            timer: document.getElementById('pacer-timer'),
+            startBtn: document.getElementById('pacer-start'),
+            stopBtn: document.getElementById('pacer-stop'),
+            technique: document.getElementById('pacer-technique'),
+            running: false,
+            interval: null,
+            timeout: null,
+            elapsed: 0,
+            circumference: 2 * Math.PI * 100,
+
+            techniques: {
+                box: { steps: [
+                    { label: 'Breathe In', duration: 4, scale: 2.2 },
+                    { label: 'Hold', duration: 4, scale: 2.2 },
+                    { label: 'Breathe Out', duration: 4, scale: 1 },
+                    { label: 'Hold', duration: 4, scale: 1 }
+                ]},
+                '478': { steps: [
+                    { label: 'Breathe In', duration: 4, scale: 2.2 },
+                    { label: 'Hold', duration: 7, scale: 2.2 },
+                    { label: 'Breathe Out', duration: 8, scale: 1 }
+                ]}
+            },
+
+            init() {
+                this.startBtn.addEventListener('click', () => this.start());
+                this.stopBtn.addEventListener('click', () => this.stop());
+            },
+
+            start() {
+                if (this.running) return;
+                this.running = true;
+                this.elapsed = 0;
+                this.startBtn.style.display = 'none';
+                this.stopBtn.style.display = '';
+                this.technique.disabled = true;
+                this.runCycle();
+                this.interval = setInterval(() => {
+                    this.elapsed++;
+                    const m = Math.floor(this.elapsed / 60);
+                    const s = this.elapsed % 60;
+                    this.timer.textContent = m + ':' + (s < 10 ? '0' : '') + s;
+                }, 1000);
+            },
+
+            stop() {
+                this.running = false;
+                clearInterval(this.interval);
+                clearTimeout(this.timeout);
+                this.startBtn.style.display = '';
+                this.stopBtn.style.display = 'none';
+                this.technique.disabled = false;
+                this.instruction.textContent = 'Press Start';
+                this.timer.textContent = '0:00';
+                this.dot.style.transform = 'scale(1)';
+                this.dot.style.transition = 'transform 0.3s ease';
+                this.arc.style.strokeDashoffset = this.circumference;
+            },
+
+            runCycle() {
+                if (!this.running) return;
+                const tech = this.techniques[this.technique.value];
+                const totalDuration = tech.steps.reduce((a, s) => a + s.duration, 0);
+                let stepIndex = 0;
+
+                const runStep = () => {
+                    if (!this.running || stepIndex >= tech.steps.length) {
+                        if (this.running) this.runCycle();
+                        return;
                     }
+                    const step = tech.steps[stepIndex];
+                    this.instruction.textContent = step.label;
+                    this.dot.style.transition = `transform ${step.duration}s ease-in-out`;
+                    this.dot.style.transform = `scale(${step.scale})`;
+
+                    // Arc progress
+                    const elapsed = tech.steps.slice(0, stepIndex).reduce((a, s) => a + s.duration, 0);
+                    const progress = (elapsed + step.duration) / totalDuration;
+                    this.arc.style.transitionDuration = step.duration + 's';
+                    this.arc.style.strokeDashoffset = this.circumference * (1 - progress);
+
+                    stepIndex++;
+                    this.timeout = setTimeout(runStep, step.duration * 1000);
+                };
+
+                // Reset arc
+                this.arc.style.transitionDuration = '0s';
+                this.arc.style.strokeDashoffset = this.circumference;
+                requestAnimationFrame(() => {
+                    requestAnimationFrame(() => runStep());
                 });
-            }, observerOptions);
-            sections.forEach(section => {
-                observer.observe(section);
-            });
-            const animatedElements = document.querySelectorAll('section:not(#home) > div > *');
-            const animationObserver = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('fade-in-up');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.1, rootMargin: '0px 0px -10% 0px' });
-            animatedElements.forEach(el => {
-                animationObserver.observe(el);
-            });
+            }
+        };
+
+        /* ========================
+           Module: Easter Egg
+        ======================== */
+        const EasterEgg = {
+            popup: document.getElementById('easter-popup'),
+            trigger: document.getElementById('easter-egg-trigger'),
+            closeBtn: document.getElementById('easter-close'),
+            items: [
+                { icon: '🐒', title: 'Guybrush Threepwood says...', quote: 'I want to be a pirate!', source: 'The Secret of Monkey Island' },
+                { icon: '🏴‍☠️', title: 'Guybrush Threepwood says...', quote: 'Look behind you, a three-headed monkey!', source: 'The Secret of Monkey Island' },
+                { icon: '⚔️', title: 'Guybrush Threepwood says...', quote: 'How appropriate. You fight like a cow.', source: 'The Secret of Monkey Island' },
+                { icon: '🧟', title: 'LeChuck reminds you...', quote: 'You will die, and I will dance on your grave!', source: 'Monkey Island 2: LeChuck\'s Revenge' },
+                { icon: '🐒', title: 'Murray the Skull says...', quote: 'I\'m a powerful demonic force! I\'m the harbinger of your doom!', source: 'The Curse of Monkey Island' },
+                { icon: '🧘', title: 'Mindfulness Card of the Day', quote: 'Beginner\'s Mind — Approach this moment as if it were your first. Let go of expectations. See what is actually here.', source: 'Mindfulness Deck' },
+                { icon: '🌊', title: 'Mindfulness Card of the Day', quote: 'Letting Go — Like exhaling, release what no longer serves you. The ocean doesn\'t hold onto every wave.', source: 'Mindfulness Deck' },
+                { icon: '🫧', title: 'Mindfulness Card of the Day', quote: 'Patience — Wisdom grows in the spaces between. Not all answers arrive on schedule.', source: 'Mindfulness Deck' },
+                { icon: '🤿', title: 'Dive Log Entry #42', quote: 'At 20 metres, thought ceases and presence begins. The reef doesn\'t need you to understand it — just to be still.', source: 'From the Dive Log of A.S.' },
+                { icon: '🐢', title: 'Dive Log Entry #17', quote: 'Followed a sea turtle for twelve minutes today. It never once checked its email.', source: 'From the Dive Log of A.S.' }
+            ],
+            init() {
+                this.trigger.addEventListener('click', () => this.show());
+                this.closeBtn.addEventListener('click', () => this.hide());
+                this.popup.addEventListener('click', (e) => { if (e.target === this.popup) this.hide(); });
+            },
+            show() {
+                const item = this.items[Math.floor(Math.random() * this.items.length)];
+                document.getElementById('egg-icon').textContent = item.icon;
+                document.getElementById('egg-title').textContent = item.title;
+                document.getElementById('egg-quote').textContent = item.quote;
+                document.getElementById('egg-source').textContent = '— ' + item.source;
+                this.popup.classList.add('show');
+            },
+            hide() {
+                this.popup.classList.remove('show');
+            }
+        };
+
+        /* ========================
+           Init All
+        ======================== */
+        document.addEventListener('DOMContentLoaded', () => {
+            Theme.init();
+            MobileMenu.init();
+            ScrollEffects.init();
+            Reveal.init();
+            PubFilter.init();
+            Bubbles.init();
+            Pacer.init();
+            EasterEgg.init();
         });
+    })();
     </script>
 </body>
 </html>
