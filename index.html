@@ -582,6 +582,31 @@
             color: var(--c-text); cursor: pointer;
         }
 
+        /* ===== @layer: Pacer Evidence ===== */
+        .pacer-evidence {
+            max-width: 640px; margin: 0 auto 2.5rem; text-align: left;
+        }
+        .pacer-evidence p {
+            color: var(--c-text-secondary); font-size: 0.92rem; line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+        .pacer-evidence .evidence-refs {
+            border-top: 1px solid var(--c-border); padding-top: 1rem; margin-top: 1.25rem;
+        }
+        .pacer-evidence .evidence-refs p {
+            font-family: var(--font-mono); font-size: 0.68rem; text-transform: uppercase;
+            letter-spacing: 0.08em; color: var(--c-text-muted); margin-bottom: 0.6rem;
+            font-weight: 600;
+        }
+        .pacer-evidence .ref-item {
+            font-size: 0.78rem; color: var(--c-text-muted); line-height: 1.55;
+            margin-bottom: 0.4rem; padding-left: 1rem; text-indent: -1rem;
+        }
+        .pacer-evidence .ref-item a {
+            color: var(--c-accent); text-decoration: none;
+        }
+        .pacer-evidence .ref-item a:hover { text-decoration: underline; }
+
         /* ===== @layer: Footer ===== */
         footer {
             background: var(--c-deep);
@@ -993,7 +1018,20 @@
         <section id="breathe" class="alt-bg pacer-section">
             <div class="section-inner">
                 <h2 class="section-title reveal">60-Second Stress Reset</h2>
-                <div class="section-subtitle reveal">Experience the science first-hand. Choose a technique and follow the pacer.</div>
+                <div class="section-subtitle reveal">Try a structured breathing exercise grounded in peer-reviewed evidence.</div>
+
+                <div class="pacer-evidence reveal">
+                    <p>Slow, controlled breathing activates the parasympathetic nervous system — the body's "rest and digest" pathway — by stimulating the vagus nerve. This shifts autonomic balance away from the fight-or-flight response, lowering heart rate and blood pressure within minutes.</p>
+                    <p><strong>Box Breathing (4-4-4-4)</strong> uses equal-duration phases of inhalation, hold, exhalation, and hold. A Stanford RCT (N=108) found that daily 5-minute box breathing significantly reduced state anxiety (p&lt;0.0001) and negative affect over 28 days, with effects comparable to mindfulness meditation (Balban et al., 2023, <em>Cell Reports Medicine</em>).</p>
+                    <p><strong>4-7-8 Breathing</strong> — adapted from the yogic practice of pranayama — emphasises a prolonged exhalation, extending the exhale-to-inhale ratio. In a study of 43 healthy adults, 4-7-8 practice immediately increased high-frequency HRV (a marker of vagal tone) and significantly reduced heart rate and systolic blood pressure (Vierra et al., 2022, <em>Physiological Reports</em>). A separate RCT with 90 post-surgical patients found it reduced clinical anxiety more effectively than standard deep breathing (Aktaş &amp; İlgin, 2023, <em>Obesity Surgery</em>).</p>
+                    <div class="evidence-refs">
+                        <p>References</p>
+                        <div class="ref-item">Balban, M. Y. et al. (2023). Brief structured respiration practices enhance mood and reduce physiological arousal. <em>Cell Reports Medicine, 4</em>(1), 100895. <a href="https://doi.org/10.1016/j.xcrm.2022.100895" target="_blank" rel="noopener">doi:10.1016/j.xcrm.2022.100895</a></div>
+                        <div class="ref-item">Vierra, J., Boonla, O., &amp; Prasertsri, P. (2022). Effects of sleep deprivation and 4-7-8 breathing control on heart rate variability, blood pressure, blood glucose, and endothelial function in healthy young adults. <em>Physiological Reports, 10</em>(13), e15389. <a href="https://doi.org/10.14814/phy2.15389" target="_blank" rel="noopener">doi:10.14814/phy2.15389</a></div>
+                        <div class="ref-item">Aktaş, G. K. &amp; İlgin, V. E. (2023). The effect of deep breathing exercise and 4-7-8 breathing techniques applied to patients after bariatric surgery on anxiety and quality of life. <em>Obesity Surgery, 33</em>(3), 920–929. <a href="https://doi.org/10.1007/s11695-022-06405-1" target="_blank" rel="noopener">doi:10.1007/s11695-022-06405-1</a></div>
+                    </div>
+                </div>
+
                 <div class="glass-card pacer-widget reveal">
                     <div class="pacer-circle-wrap">
                         <svg class="pacer-progress" width="220" height="220" viewBox="0 0 220 220">
