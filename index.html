@@ -1351,16 +1351,24 @@
             trigger: document.getElementById('easter-egg-trigger'),
             closeBtn: document.getElementById('easter-close'),
             items: [
-                { icon: '🐒', title: 'Guybrush Threepwood says...', quote: 'I want to be a pirate!', source: 'The Secret of Monkey Island' },
-                { icon: '🏴‍☠️', title: 'Guybrush Threepwood says...', quote: 'Look behind you, a three-headed monkey!', source: 'The Secret of Monkey Island' },
-                { icon: '⚔️', title: 'Guybrush Threepwood says...', quote: 'How appropriate. You fight like a cow.', source: 'The Secret of Monkey Island' },
-                { icon: '🧟', title: 'LeChuck reminds you...', quote: 'You will die, and I will dance on your grave!', source: 'Monkey Island 2: LeChuck\'s Revenge' },
-                { icon: '🐒', title: 'Murray the Skull says...', quote: 'I\'m a powerful demonic force! I\'m the harbinger of your doom!', source: 'The Curse of Monkey Island' },
-                { icon: '🧘', title: 'Mindfulness Card of the Day', quote: 'Beginner\'s Mind — Approach this moment as if it were your first. Let go of expectations. See what is actually here.', source: 'Mindfulness Deck' },
-                { icon: '🌊', title: 'Mindfulness Card of the Day', quote: 'Letting Go — Like exhaling, release what no longer serves you. The ocean doesn\'t hold onto every wave.', source: 'Mindfulness Deck' },
-                { icon: '🫧', title: 'Mindfulness Card of the Day', quote: 'Patience — Wisdom grows in the spaces between. Not all answers arrive on schedule.', source: 'Mindfulness Deck' },
+                // Reflective quotes from film & literature
+                { icon: '🌿', title: 'A Moment of Reflection', quote: 'Do or do not. There is no try.', source: 'Yoda — The Empire Strikes Back' },
+                { icon: '🎬', title: 'A Moment of Reflection', quote: 'Life moves pretty fast. If you don\'t stop and look around once in a while, you could miss it.', source: 'Ferris Bueller — Ferris Bueller\'s Day Off' },
+                { icon: '🐠', title: 'A Moment of Reflection', quote: 'Just keep swimming.', source: 'Dory — Finding Nemo' },
+                { icon: '🏔️', title: 'A Moment of Reflection', quote: 'The only Zen you can find on the tops of mountains is the Zen you bring up there.', source: 'Robert M. Pirsig — Zen and the Art of Motorcycle Maintenance' },
+                { icon: '🌅', title: 'A Moment of Reflection', quote: 'Yesterday is history, tomorrow is a mystery, but today is a gift. That is why it is called the present.', source: 'Oogway — Kung Fu Panda' },
+                { icon: '🐒', title: 'A Moment of Reflection', quote: 'I\'m Guybrush Threepwood, mighty pirate! ...Well, I\'m working on it.', source: 'The Secret of Monkey Island' },
+                // Mindfulness cards (aligned with SOMA attitudinal framings)
+                { icon: '🧘', title: 'Mindfulness Card', quote: 'Beginner\'s Mind — Approach this moment as if it were your first. Let go of expectations. See what is actually here.', source: 'Attitudinal Framing: Curiosity' },
+                { icon: '🌊', title: 'Mindfulness Card', quote: 'Letting Go — Like exhaling, release what no longer serves you. The ocean doesn\'t hold onto every wave.', source: 'Attitudinal Framing: Letting Go' },
+                { icon: '🫧', title: 'Mindfulness Card', quote: 'Patience — Wisdom grows in the spaces between. Not all answers arrive on schedule.', source: 'Attitudinal Framing: Patience' },
+                { icon: '🌱', title: 'Mindfulness Card', quote: 'Acceptance — This moment is already here. Meeting it without resistance is not giving up; it is waking up.', source: 'Attitudinal Framing: Acceptance' },
+                { icon: '☁️', title: 'Mindfulness Card', quote: 'Gentleness — Treat your wandering mind the way you would a friend who lost their train of thought: with a smile, not a lecture.', source: 'Attitudinal Framing: Gentleness' },
+                { icon: '✨', title: 'Mindfulness Card', quote: 'Being — You are not your to-do list. For thirty seconds, try simply existing. Notice what shifts.', source: 'Attitudinal Framing: Being' },
+                // Dive log entries
                 { icon: '🤿', title: 'Dive Log Entry #42', quote: 'At 20 metres, thought ceases and presence begins. The reef doesn\'t need you to understand it — just to be still.', source: 'From the Dive Log of A.S.' },
-                { icon: '🐢', title: 'Dive Log Entry #17', quote: 'Followed a sea turtle for twelve minutes today. It never once checked its email.', source: 'From the Dive Log of A.S.' }
+                { icon: '🐢', title: 'Dive Log Entry #17', quote: 'Followed a sea turtle for twelve minutes today. It never once checked its email.', source: 'From the Dive Log of A.S.' },
+                { icon: '🐙', title: 'Dive Log Entry #31', quote: 'An octopus changed colour three times while I watched. A reminder that adaptation doesn\'t require overthinking.', source: 'From the Dive Log of A.S.' }
             ],
             init() {
                 this.trigger.addEventListener('click', () => this.show());
