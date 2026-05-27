@@ -152,8 +152,8 @@
         .highlight-quote span { font-style: normal; font-weight: 600; color: var(--c-text); }
         .project-card { display: flex; flex-direction: column; overflow: hidden; }
         @media (min-width: 640px) { .project-card { flex-direction: row; } }
-        .project-card img { width: 100%; height: 220px; object-fit: cover; }
-        @media (min-width: 640px) { .project-card img { width: 280px; height: auto; } }
+        .project-card img { width: 100%; height: 240px; object-fit: cover; object-position: center; }
+        @media (min-width: 640px) { .project-card img { width: 300px; height: 100%; min-height: 220px; object-fit: cover; object-position: center; flex-shrink: 0; } }
         .project-body { padding: 2rem; flex: 1; display: flex; flex-direction: column; }
         .badge-row { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.75rem; }
         .badge { font-family: var(--font-mono); font-size: 0.7rem; font-weight: 500; padding: 0.25em 0.7em; border-radius: 50px; background: var(--c-accent-light); color: var(--c-accent); letter-spacing: 0.02em; }
@@ -172,7 +172,7 @@
         .soma-card { display: flex; flex-direction: column; overflow: hidden; border-left: 4px solid var(--c-accent); }
         @media (min-width: 640px) { .soma-card { flex-direction: row; } }
         .soma-visual { width: 100%; height: 220px; background: linear-gradient(135deg, #1a2e20 0%, #2c4a36 50%, #1a2e20 100%); display: flex; align-items: center; justify-content: center; flex-shrink: 0; position: relative; overflow: hidden; }
-        @media (min-width: 640px) { .soma-visual { width: 280px; height: auto; } }
+        @media (min-width: 640px) { .soma-visual { width: 300px; height: auto; min-height: 220px; flex-shrink: 0; } }
         .soma-visual::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 70% 30%, rgba(90,138,100,0.3) 0%, transparent 60%); }
         .soma-grid-icon { position: relative; z-index: 1; }
         .soma-grid-icon svg { width: 72px; height: 72px; opacity: 0.9; }
@@ -187,7 +187,8 @@
         .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
         .events-grid { display: grid; gap: 1.5rem; }
         .event-card { overflow: hidden; display: flex; flex-direction: column; }
-        .event-card img { width: 100%; height: 200px; object-fit: cover; }
+        .event-card img { width: 100%; height: 200px; object-fit: cover; object-position: center top; }
+        @media (min-width: 640px) { .event-card img { height: 240px; object-position: center; } }
         .event-body { padding: 1.5rem; flex: 1; display: flex; flex-direction: column; }
         .event-body h3 { font-family: var(--font-display); font-size: 1.2rem; color: var(--c-text); margin-bottom: 0.75rem; line-height: 1.35; }
         .event-meta { font-size: 0.82rem; color: var(--c-text-muted); margin-bottom: 0.5rem; }
@@ -426,7 +427,6 @@
                         <div class="badge-row">
                             <span class="badge">Open Science</span>
                             <span class="badge">CC BY-NC-SA 4.0</span>
-                            <span class="badge preprint">Under Review · NHB</span>
                         </div>
                         <h3>SOMA — Standardized Open-source Mindfulness Architecture</h3>
                         <p>The first open-source stimulus library providing mechanistically orthogonal active controls and equity-engineered materials for mindfulness RCT research. 88 audio and script assets validated in a pre-registered RCT (N&nbsp;=&nbsp;360), with a mechanistic double dissociation of exceptional strength (F(1,358)&nbsp;=&nbsp;185.95, p&nbsp;=&nbsp;2.2&nbsp;×&nbsp;10⁻³⁴). Designed for populations traditionally excluded from mindfulness research: Grade&nbsp;5–6 reading level, no quiet space required, no prior experience assumed.</p>
